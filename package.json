@@ -1,0 +1,43 @@
+{
+  "name": "react-textscroll",
+  "version": "1.0.0",
+  "description": "text scroll for notice board.",
+  "main": "/dist/bundle.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "rollup -cw",
+    "build": "cross-env NODE_ENV=production npm run lint && rollup -c --watch",
+    "lint": "tslint --project tsconfig.json"
+  },
+  "keywords": [
+    "react",
+    "text",
+    "scroll",
+    "text-scroll",
+    "notice"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cross-env": "^5.1.1",
+    "prettier": "^1.9.2",
+    "rollup": "^0.52.2",
+    "rollup-plugin-commonjs": "^8.2.6",
+    "rollup-plugin-livereload": "^0.6.0",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-replace": "^2.0.0",
+    "rollup-plugin-typescript": "^0.8.1",
+    "rollup-plugin-uglify": "^2.0.1",
+    "tslint": "^5.8.0",
+    "tslint-config-prettier": "^1.6.0",
+    "tslint-react": "^3.2.0",
+    "typescript": "^2.6.2"
+  },
+  "dependencies": {
+    "@types/react": "^16.0.31",
+    "@types/react-dom": "^16.0.3",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "rollup-plugin-serve": "^0.4.2"
+  }
+}

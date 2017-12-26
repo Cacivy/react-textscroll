@@ -39,6 +39,7 @@
     "@types/react-dom": "^16.0.3",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "rollup-plugin-serve": "^0.4.2"
+    "rollup-plugin-serve": "^0.4.2",
+    "styled-components": "^2.4.0"
   }
 }

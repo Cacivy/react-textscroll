@@ -1,11 +1,18 @@
 import React from 'react'
+import styled from 'styled-components'
 
-export default class App extends React.Component {
+class App extends React.Component<{className: string}> {
   render() {
     return (
-      <div>
+      <div className={this.props.className}>
         TextScroll cadsasad
       </div>
     )
   }
 }
+
+const StyledApp = styled(App)`
+  color: #abc;
+`
+
+export default StyledApp

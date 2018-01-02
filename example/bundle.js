@@ -130,7 +130,7 @@ function shouldUseNative() {
 	}
 }
 
-var C__Projects_cacivy_reactTextscroll_node_modules_objectAssign = shouldUseNative() ? Object.assign : function (target, source) {
+var D__java_vsWS_reactTextscroll_node_modules_objectAssign = shouldUseNative() ? Object.assign : function (target, source) {
 	var from;
 	var to = toObject(target);
 	var symbols;
@@ -385,7 +385,7 @@ var react_development = createCommonjsModule(function (module) {
 
 {
   (function() {
-var _assign = C__Projects_cacivy_reactTextscroll_node_modules_objectAssign;
+var _assign = D__java_vsWS_reactTextscroll_node_modules_objectAssign;
 var emptyObject = emptyObject_1;
 var invariant = invariant_1;
 var warning = warning_1;
@@ -2148,7 +2148,7 @@ function camelizeStyleName(string) {
 
 var camelizeStyleName_1 = camelizeStyleName;
 
-var C__Projects_cacivy_reactTextscroll_node_modules_react = createCommonjsModule(function (module) {
+var D__java_vsWS_reactTextscroll_node_modules_react = createCommonjsModule(function (module) {
 {
   module.exports = react_development;
 }
@@ -2166,11 +2166,11 @@ var reactDom_development = createCommonjsModule(function (module) {
 
 {
   (function() {
-var React = C__Projects_cacivy_reactTextscroll_node_modules_react;
+var React = D__java_vsWS_reactTextscroll_node_modules_react;
 var invariant = invariant_1;
 var warning = warning_1;
 var ExecutionEnvironment = ExecutionEnvironment_1;
-var _assign = C__Projects_cacivy_reactTextscroll_node_modules_objectAssign;
+var _assign = D__java_vsWS_reactTextscroll_node_modules_objectAssign;
 var emptyFunction = emptyFunction_1;
 var EventListener = EventListener_1;
 var getActiveElement = getActiveElement_1;
@@ -17549,6 +17549,7 @@ var reactDom = createCommonjsModule(function (module) {
 
 var reactDom_1 = reactDom.render;
 
+<<<<<<< 78fc5d71557cb56ad66d1604a4705d2980dfd8af
 /*!
  * isobject <https://github.com/jonschlinkert/isobject>
  *
@@ -21277,6 +21278,64 @@ var constructWithOptions = _constructWithOptions(css);
 var StyledComponent = _StyledComponent(ComponentStyle, constructWithOptions);
 
 var styled = _styled(StyledComponent, constructWithOptions);
+=======
+var TextScroll = /** @class */ (function (_super) {
+    __extends(TextScroll, _super);
+    function TextScroll(props) {
+        var _this = _super.call(this, props) || this;
+        _this.state = {
+            duration: 10,
+            content_width: 500,
+            container_width: 500,
+        };
+        return _this;
+    }
+    TextScroll.prototype.componentDidMount = function () {
+        var dom = undefined(this.refs.container);
+        var parentElement = dom.parentElement;
+        var contentWidth = dom ? dom.scrollWidth : 500;
+        var containerWidth = parentElement ? parentElement.clientWidth : 500;
+        var duration = (this.props.speed || 10) * contentWidth / containerWidth / 1000;
+        this.setState({
+            duration: duration,
+            content_width: contentWidth,
+            container_width: containerWidth
+        });
+    };
+    TextScroll.prototype.render = function () {
+        var _this = this;
+        //     const Container = styled.div`
+        //   position: relative
+        //   display: block
+        //   width: auto
+        //   left: 500px
+        //   animation: changebox ${this.state.duration}s linear
+        //   animation-play-state: running
+        //   animation-fill-mode: forwards
+        //   animation-iteration-count: infinite
+        //   @keyframes changebox {
+        //     0% {
+        //       transform: translate3d(0, 0, 0)
+        //     }
+        //     100% {
+        //       transform: translate3d( -${this.state.content_width}px, 0, 0)
+        //     }
+        //   } 
+        // `
+        //     const Item = styled.span`
+        // display: 'inline-block'
+        // margin-right: ${this.state.container_width}px
+        // `
+        return (react.createElement("div", null,
+            react.createElement("div", { ref: function (div) { return _this.Container = div; } }, this.props.text.map(function (e, i) {
+                return (react.createElement("span", { key: i },
+                    " ",
+                    e));
+            }))));
+    };
+    return TextScroll;
+}(react.Component));
+>>>>>>> 'horizontal'
 
 var App$1 = /** @class */ (function (_super) {
     __extends(App, _super);
@@ -21284,7 +21343,18 @@ var App$1 = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     App.prototype.render = function () {
+<<<<<<< 78fc5d71557cb56ad66d1604a4705d2980dfd8af
         return (react.createElement("div", { className: this.props.className }, "TextScroll cadsasad"));
+=======
+        var data = [
+            '向上滚动动画',
+            '向上滚',
+            '还是上面的例子，我们将transition属性合并，并扩展几个浏览器，如下CSS代码：',
+            '就跟CSS2的background属性一样，平时我们都不会像上面一样，把transition的属性一个一个摊开写，而是合并。'
+        ];
+        return (react.createElement("div", { style: { width: '500px' } },
+            react.createElement(TextScroll, { text: data, mode: 'horizontal' })));
+>>>>>>> 'horizontal'
     };
     return App;
 }(react.Component));

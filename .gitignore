@@ -5,10 +5,9 @@
 
 # testing
 /coverage
-/example
 
 # production
-/dist
+#/dist
 
 # misc
 .DS_Store

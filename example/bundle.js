@@ -73,7 +73,6 @@ object-assign
 @license MIT
 */
 
-/* eslint-disable no-unused-vars */
 var getOwnPropertySymbols = Object.getOwnPropertySymbols;
 var hasOwnProperty = Object.prototype.hasOwnProperty;
 var propIsEnumerable = Object.prototype.propertyIsEnumerable;
@@ -181,17 +180,6 @@ var emptyObject_1 = emptyObject;
  *
  */
 
-/**
- * Use invariant() to assert state which your program assumes to be true.
- *
- * Provide sprintf-style format (only %s is supported) and arguments
- * to provide information about what broke and what you were
- * expecting.
- *
- * The invariant message will be stripped in production, but the invariant
- * will remain to ensure logic does not differ in production.
- */
-
 var validateFormat = function validateFormat(format) {};
 
 {
@@ -225,15 +213,6 @@ function invariant(condition, format, a, b, c, d, e, f) {
 
 var invariant_1 = invariant;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- * 
- */
-
 function makeEmptyFunction(arg) {
   return function () {
     return arg;
@@ -259,13 +238,6 @@ emptyFunction.thatReturnsArgument = function (arg) {
 };
 
 var emptyFunction_1 = emptyFunction;
-
-/**
- * Similar to invariant but only logs a warning if the condition is not met.
- * This can be used to log issues in development environments in critical
- * paths. Removing the logging code for production environments will keep the
- * same logic and follow the same code paths.
- */
 
 var warning = emptyFunction_1;
 
@@ -1769,21 +1741,6 @@ var ExecutionEnvironment = {
 
 var ExecutionEnvironment_1 = ExecutionEnvironment;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- * @typechecks
- */
-
-
-
-/**
- * Upstream version of event listener. Does not take into account specific
- * nature of platform.
- */
 var EventListener = {
   /**
    * Listen to DOM events during the bubble phase.
@@ -1842,27 +1799,6 @@ var EventListener = {
 
 var EventListener_1 = EventListener;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- * @typechecks
- */
-
-/* eslint-disable fb-www/typeof-undefined */
-
-/**
- * Same as document.activeElement but wraps in a try-catch block. In IE it is
- * not safe to call document.activeElement if there is nothing focused.
- *
- * The activeElement will be null only if the document or document body is not
- * yet defined.
- *
- * @param {?DOMDocument} doc Defaults to current document.
- * @return {?DOMElement}
- */
 function getActiveElement(doc) /*?DOMElement*/{
   doc = doc || (typeof document !== 'undefined' ? document : undefined);
   if (typeof doc === 'undefined') {
@@ -1941,19 +1877,6 @@ function shallowEqual(objA, objB) {
 
 var shallowEqual_1 = shallowEqual;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- * @typechecks
- */
-
-/**
- * @param {*} object The object to check.
- * @return {boolean} Whether or not the object is a DOM node.
- */
 function isNode(object) {
   var doc = object ? object.ownerDocument || object : document;
   var defaultView = doc.defaultView || window;
@@ -1962,43 +1885,12 @@ function isNode(object) {
 
 var isNode_1 = isNode;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- * @typechecks
- */
-
-
-
-/**
- * @param {*} object The object to check.
- * @return {boolean} Whether or not the object is a DOM text node.
- */
 function isTextNode(object) {
   return isNode_1(object) && object.nodeType == 3;
 }
 
 var isTextNode_1 = isTextNode;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- * 
- */
-
-
-
-/*eslint-disable no-bitwise */
-
-/**
- * Checks if a given DOM node contains or is another DOM node.
- */
 function containsNode(outerNode, innerNode) {
   if (!outerNode || !innerNode) {
     return false;
@@ -2027,10 +1919,6 @@ var containsNode_1 = containsNode;
  *
  */
 
-/**
- * @param {DOMElement} node input/textarea to focus
- */
-
 function focusNode(node) {
   // IE8 can throw "Can't move focus to the control because it is invisible,
   // not enabled, or of a type that does not accept the focus." for all kinds of
@@ -2041,15 +1929,6 @@ function focusNode(node) {
 }
 
 var focusNode_1 = focusNode;
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- * @typechecks
- */
 
 var _uppercasePattern = /([A-Z])/g;
 
@@ -2094,15 +1973,6 @@ function hyphenateStyleName(string) {
 }
 
 var hyphenateStyleName_1 = hyphenateStyleName;
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- * @typechecks
- */
 
 var _hyphenPattern = /-(.)/g;
 
@@ -17549,7 +17419,6 @@ var reactDom = createCommonjsModule(function (module) {
 
 var reactDom_1 = reactDom.render;
 
-<<<<<<< 78fc5d71557cb56ad66d1604a4705d2980dfd8af
 /*!
  * isobject <https://github.com/jonschlinkert/isobject>
  *
@@ -19518,7 +19387,7 @@ var factoryWithTypeCheckers = function(isValidElement, throwOnDirectAccess) {
       }
       // We need to check all keys in case some are required but missing from
       // props.
-      var allKeys = C__Projects_cacivy_reactTextscroll_node_modules_objectAssign({}, props[propName], shapeTypes);
+      var allKeys = D__java_vsWS_reactTextscroll_node_modules_objectAssign({}, props[propName], shapeTypes);
       for (var key in allKeys) {
         var checker = shapeTypes[key];
         if (!checker) {
@@ -19671,7 +19540,7 @@ var factoryWithTypeCheckers = function(isValidElement, throwOnDirectAccess) {
   return ReactPropTypes;
 };
 
-var C__Projects_cacivy_reactTextscroll_node_modules_propTypes = createCommonjsModule(function (module) {
+var D__java_vsWS_reactTextscroll_node_modules_propTypes = createCommonjsModule(function (module) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -19701,17 +19570,6 @@ var C__Projects_cacivy_reactTextscroll_node_modules_propTypes = createCommonjsMo
 /**
  * Copyright 2015, Yahoo! Inc.
  * Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.
- */
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- * @typechecks
  */
 
 var _uppercasePattern$1 = /([A-Z])/g;
@@ -20337,10 +20195,10 @@ var StyleSheetManager = function (_Component) {
   return StyleSheetManager;
 }(react_1);
 
-StyleSheetManager.childContextTypes = (_StyleSheetManager$ch = {}, _StyleSheetManager$ch[CONTEXT_KEY] = C__Projects_cacivy_reactTextscroll_node_modules_propTypes.oneOfType([C__Projects_cacivy_reactTextscroll_node_modules_propTypes.instanceOf(StyleSheet), C__Projects_cacivy_reactTextscroll_node_modules_propTypes.instanceOf(ServerStyleSheet)]).isRequired, _StyleSheetManager$ch);
+StyleSheetManager.childContextTypes = (_StyleSheetManager$ch = {}, _StyleSheetManager$ch[CONTEXT_KEY] = D__java_vsWS_reactTextscroll_node_modules_propTypes.oneOfType([D__java_vsWS_reactTextscroll_node_modules_propTypes.instanceOf(StyleSheet), D__java_vsWS_reactTextscroll_node_modules_propTypes.instanceOf(ServerStyleSheet)]).isRequired, _StyleSheetManager$ch);
 
 StyleSheetManager.propTypes = {
-  sheet: C__Projects_cacivy_reactTextscroll_node_modules_propTypes.oneOfType([C__Projects_cacivy_reactTextscroll_node_modules_propTypes.instanceOf(StyleSheet), C__Projects_cacivy_reactTextscroll_node_modules_propTypes.instanceOf(ServerStyleSheet)]).isRequired
+  sheet: D__java_vsWS_reactTextscroll_node_modules_propTypes.oneOfType([D__java_vsWS_reactTextscroll_node_modules_propTypes.instanceOf(StyleSheet), D__java_vsWS_reactTextscroll_node_modules_propTypes.instanceOf(ServerStyleSheet)]).isRequired
 };
 
 //      
@@ -20649,10 +20507,10 @@ var _ThemeProvider$contex;
 var CHANNEL = '__styled-components__';
 var CHANNEL_NEXT = CHANNEL + 'next__';
 
-var CONTEXT_CHANNEL_SHAPE = C__Projects_cacivy_reactTextscroll_node_modules_propTypes.shape({
-  getTheme: C__Projects_cacivy_reactTextscroll_node_modules_propTypes.func,
-  subscribe: C__Projects_cacivy_reactTextscroll_node_modules_propTypes.func,
-  unsubscribe: C__Projects_cacivy_reactTextscroll_node_modules_propTypes.func
+var CONTEXT_CHANNEL_SHAPE = D__java_vsWS_reactTextscroll_node_modules_propTypes.shape({
+  getTheme: D__java_vsWS_reactTextscroll_node_modules_propTypes.func,
+  subscribe: D__java_vsWS_reactTextscroll_node_modules_propTypes.func,
+  unsubscribe: D__java_vsWS_reactTextscroll_node_modules_propTypes.func
 });
 
 var warnChannelDeprecated = void 0;
@@ -20761,7 +20619,7 @@ var ThemeProvider = function (_Component) {
   return ThemeProvider;
 }(react_1);
 
-ThemeProvider.childContextTypes = (_ThemeProvider$childC = {}, _ThemeProvider$childC[CHANNEL] = C__Projects_cacivy_reactTextscroll_node_modules_propTypes.func, _ThemeProvider$childC[CHANNEL_NEXT] = CONTEXT_CHANNEL_SHAPE, _ThemeProvider$childC);
+ThemeProvider.childContextTypes = (_ThemeProvider$childC = {}, _ThemeProvider$childC[CHANNEL] = D__java_vsWS_reactTextscroll_node_modules_propTypes.func, _ThemeProvider$childC[CHANNEL_NEXT] = CONTEXT_CHANNEL_SHAPE, _ThemeProvider$childC);
 ThemeProvider.contextTypes = (_ThemeProvider$contex = {}, _ThemeProvider$contex[CHANNEL_NEXT] = CONTEXT_CHANNEL_SHAPE, _ThemeProvider$contex);
 
 //      
@@ -21023,7 +20881,7 @@ var _StyledComponent = (function (ComponentStyle, constructWithOptions) {
       return StyledComponent;
     }(ParentComponent);
 
-    StyledComponent.contextTypes = (_StyledComponent$cont = {}, _StyledComponent$cont[CHANNEL] = C__Projects_cacivy_reactTextscroll_node_modules_propTypes.func, _StyledComponent$cont[CHANNEL_NEXT] = CONTEXT_CHANNEL_SHAPE, _StyledComponent$cont[CONTEXT_KEY] = C__Projects_cacivy_reactTextscroll_node_modules_propTypes.oneOfType([C__Projects_cacivy_reactTextscroll_node_modules_propTypes.instanceOf(StyleSheet), C__Projects_cacivy_reactTextscroll_node_modules_propTypes.instanceOf(ServerStyleSheet)]), _StyledComponent$cont);
+    StyledComponent.contextTypes = (_StyledComponent$cont = {}, _StyledComponent$cont[CHANNEL] = D__java_vsWS_reactTextscroll_node_modules_propTypes.func, _StyledComponent$cont[CHANNEL_NEXT] = CONTEXT_CHANNEL_SHAPE, _StyledComponent$cont[CONTEXT_KEY] = D__java_vsWS_reactTextscroll_node_modules_propTypes.oneOfType([D__java_vsWS_reactTextscroll_node_modules_propTypes.instanceOf(StyleSheet), D__java_vsWS_reactTextscroll_node_modules_propTypes.instanceOf(ServerStyleSheet)]), _StyledComponent$cont);
     StyledComponent.displayName = displayName;
     StyledComponent.styledComponentId = styledComponentId;
     StyledComponent.attrs = attrs;
@@ -21230,8 +21088,6 @@ var _styled = (function (styledComponent, constructWithOptions) {
 });
 
 //      
-
-
 var _constructWithOptions = (function (css) {
   var constructWithOptions = function constructWithOptions(componentConstructor, tag) {
     var options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
@@ -21267,19 +21123,16 @@ var _constructWithOptions = (function (css) {
 });
 
 //      
+/* globals ReactClass */
 
-/* Import singletons */
-/* Import singleton constructors */
-/* Import components */
-/* Import Higher Order Components */
-/* Instantiate singletons */
 var ComponentStyle = _ComponentStyle(generateAlphabeticName, flatten, stringifyRules);
 var constructWithOptions = _constructWithOptions(css);
 var StyledComponent = _StyledComponent(ComponentStyle, constructWithOptions);
 
+/* Instantiate exported singletons */
 var styled = _styled(StyledComponent, constructWithOptions);
-=======
-var TextScroll = /** @class */ (function (_super) {
+
+var TextScroll$1 = /** @class */ (function (_super) {
     __extends(TextScroll, _super);
     function TextScroll(props) {
         var _this = _super.call(this, props) || this;
@@ -21291,11 +21144,17 @@ var TextScroll = /** @class */ (function (_super) {
         return _this;
     }
     TextScroll.prototype.componentDidMount = function () {
-        var dom = undefined(this.refs.container);
+        var dom = reactDom.findDOMNode(this.container);
         var parentElement = dom.parentElement;
-        var contentWidth = dom ? dom.scrollWidth : 500;
+        var children = dom.children;
         var containerWidth = parentElement ? parentElement.clientWidth : 500;
-        var duration = (this.props.speed || 10) * contentWidth / containerWidth / 1000;
+        var contentWidth = 0;
+        for (var i = 0; i < children.length; i++) {
+            contentWidth += children[i].scrollWidth;
+            contentWidth += containerWidth;
+        }
+        contentWidth = contentWidth === 0 ? 500 : contentWidth;
+        var duration = (this.props.speed || 10) * contentWidth / 500000;
         this.setState({
             duration: duration,
             content_width: contentWidth,
@@ -21304,62 +21163,39 @@ var TextScroll = /** @class */ (function (_super) {
     };
     TextScroll.prototype.render = function () {
         var _this = this;
-        //     const Container = styled.div`
-        //   position: relative
-        //   display: block
-        //   width: auto
-        //   left: 500px
-        //   animation: changebox ${this.state.duration}s linear
-        //   animation-play-state: running
-        //   animation-fill-mode: forwards
-        //   animation-iteration-count: infinite
-        //   @keyframes changebox {
-        //     0% {
-        //       transform: translate3d(0, 0, 0)
-        //     }
-        //     100% {
-        //       transform: translate3d( -${this.state.content_width}px, 0, 0)
-        //     }
-        //   } 
-        // `
-        //     const Item = styled.span`
-        // display: 'inline-block'
-        // margin-right: ${this.state.container_width}px
-        // `
-        return (react.createElement("div", null,
-            react.createElement("div", { ref: function (div) { return _this.Container = div; } }, this.props.text.map(function (e, i) {
-                return (react.createElement("span", { key: i },
+        var Container = styled.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n        position: relative;\n        display: block;\n        width: auto;\n        left:", "px;\n        animation: changebox ", "s linear;\n        animation-play-state: running;\n        animation-fill-mode: forwards;\n        animation-iteration-count: infinite;\n        &:hover {\n            animation-play-state: paused;\n            cursor:default;\n        }\n        @keyframes changebox {\n            0% {\n            transform: translate3d(0, 0, 0);\n            }\n            100% {\n            transform: translate3d( -", "px, 0, 0);\n            }\n        } \n        "], ["\n        position: relative;\n        display: block;\n        width: auto;\n        left:", "px;\n        animation: changebox ", "s linear;\n        animation-play-state: running;\n        animation-fill-mode: forwards;\n        animation-iteration-count: infinite;\n        &:hover {\n            animation-play-state: paused;\n            cursor:default;\n        }\n        @keyframes changebox {\n            0% {\n            transform: translate3d(0, 0, 0);\n            }\n            100% {\n            transform: translate3d( -", "px, 0, 0);\n            }\n        } \n        "])), this.state.container_width, this.state.duration, this.state.content_width);
+        var Item = styled.span(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n        display:inline-block;\n        margin-right: ", "px\n        "], ["\n        display:inline-block;\n        margin-right: ", "px\n        "])), this.state.container_width);
+        return (react.createElement("div", { className: this.props.className },
+            react.createElement(Container, { ref: function (div) { return _this.container = div; } }, this.props.text.map(function (e, i) {
+                return (react.createElement(Item, { key: i },
                     " ",
                     e));
             }))));
     };
     return TextScroll;
 }(react.Component));
->>>>>>> 'horizontal'
+var StyledTextScroll = styled(TextScroll$1)(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n    width:100%;\n    height: 100%;\n    overflow: hidden;\n    word-break: keep-all;\n    white-space: nowrap;\n    display:flex;\n    align-items:center ;\n"], ["\n    width:100%;\n    height: 100%;\n    overflow: hidden;\n    word-break: keep-all;\n    white-space: nowrap;\n    display:flex;\n    align-items:center ;\n"])));
+var templateObject_1;
+var templateObject_2;
+var templateObject_3;
+//# sourceMappingURL=TextScroll.js.map
 
 var App$1 = /** @class */ (function (_super) {
     __extends(App, _super);
     function App() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    App.prototype.render = function () {
-<<<<<<< 78fc5d71557cb56ad66d1604a4705d2980dfd8af
-        return (react.createElement("div", { className: this.props.className }, "TextScroll cadsasad"));
-=======
-        var data = [
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.data = [
             '向上滚动动画',
             '向上滚',
-            '还是上面的例子，我们将transition属性合并，并扩展几个浏览器，如下CSS代码：',
-            '就跟CSS2的background属性一样，平时我们都不会像上面一样，把transition的属性一个一个摊开写，而是合并。'
         ];
-        return (react.createElement("div", { style: { width: '500px' } },
-            react.createElement(TextScroll, { text: data, mode: 'horizontal' })));
->>>>>>> 'horizontal'
+        return _this;
+    }
+    App.prototype.render = function () {
+        return (react.createElement("div", { style: { width: '400px', border: '1px solid black' } },
+            react.createElement(StyledTextScroll, { text: this.data, mode: 'horizontal', speed: 5000 })));
     };
     return App;
 }(react.Component));
-var StyledApp = styled(App$1)(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  color: #abc;\n"], ["\n  color: #abc;\n"])));
-var templateObject_1;
 
 var App = /** @class */ (function (_super) {
     __extends(App, _super);
@@ -21368,10 +21204,11 @@ var App = /** @class */ (function (_super) {
     }
     App.prototype.render = function () {
         return (react.createElement("div", null,
-            react.createElement(StyledApp, null)));
+            react.createElement(App$1, null)));
     };
     return App;
 }(react.Component));
 reactDom.render(react.createElement(App, null), document.getElementById('root'));
+//# sourceMappingURL=index.js.map
 
 }());

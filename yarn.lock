@@ -1273,15 +1273,9 @@ strip-json-comments@~2.0.1:
   version "2.0.1"
   resolved "http://registry.npm.taobao.org/strip-json-comments/download/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
 
-<<<<<<< 78fc5d71557cb56ad66d1604a4705d2980dfd8af
 styled-components@^2.4.0:
   version "2.4.0"
   resolved "http://registry.npm.taobao.org/styled-components/download/styled-components-2.4.0.tgz#086d0fd483d54638837fca3ea546a030b94adf75"
-=======
-styled-components@^2.3.3:
-  version "2.3.3"
-  resolved "http://registry.npm.taobao.org/styled-components/download/styled-components-2.3.3.tgz#351d0be84699db750c73d95617e4334157421f71"
->>>>>>> 'horizontal'
   dependencies:
     buffer "^5.0.3"
     css-to-react-native "^2.0.3"

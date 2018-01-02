@@ -1,5 +1,6 @@
 export interface TextScrollProp {
-    mode: string // "vertical"
+    className?: string
+    mode?: string // "vertical"
     text: Array<string>
     speed?: number
 

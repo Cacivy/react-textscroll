@@ -130,7 +130,7 @@ function shouldUseNative() {
 	}
 }
 
-var C__Projects_cacivy_reactTextscroll_node_modules_objectAssign = shouldUseNative() ? Object.assign : function (target, source) {
+var D__java_vsWS_reactTextscroll_node_modules_objectAssign = shouldUseNative() ? Object.assign : function (target, source) {
 	var from;
 	var to = toObject(target);
 	var symbols;
@@ -385,7 +385,7 @@ var react_development = createCommonjsModule(function (module) {
 
 {
   (function() {
-var _assign = C__Projects_cacivy_reactTextscroll_node_modules_objectAssign;
+var _assign = D__java_vsWS_reactTextscroll_node_modules_objectAssign;
 var emptyObject = emptyObject_1;
 var invariant = invariant_1;
 var warning = warning_1;
@@ -2148,7 +2148,7 @@ function camelizeStyleName(string) {
 
 var camelizeStyleName_1 = camelizeStyleName;
 
-var C__Projects_cacivy_reactTextscroll_node_modules_react = createCommonjsModule(function (module) {
+var D__java_vsWS_reactTextscroll_node_modules_react = createCommonjsModule(function (module) {
 {
   module.exports = react_development;
 }
@@ -2166,11 +2166,11 @@ var reactDom_development = createCommonjsModule(function (module) {
 
 {
   (function() {
-var React = C__Projects_cacivy_reactTextscroll_node_modules_react;
+var React = D__java_vsWS_reactTextscroll_node_modules_react;
 var invariant = invariant_1;
 var warning = warning_1;
 var ExecutionEnvironment = ExecutionEnvironment_1;
-var _assign = C__Projects_cacivy_reactTextscroll_node_modules_objectAssign;
+var _assign = D__java_vsWS_reactTextscroll_node_modules_objectAssign;
 var emptyFunction = emptyFunction_1;
 var EventListener = EventListener_1;
 var getActiveElement = getActiveElement_1;
@@ -19517,7 +19517,7 @@ var factoryWithTypeCheckers = function(isValidElement, throwOnDirectAccess) {
       }
       // We need to check all keys in case some are required but missing from
       // props.
-      var allKeys = C__Projects_cacivy_reactTextscroll_node_modules_objectAssign({}, props[propName], shapeTypes);
+      var allKeys = D__java_vsWS_reactTextscroll_node_modules_objectAssign({}, props[propName], shapeTypes);
       for (var key in allKeys) {
         var checker = shapeTypes[key];
         if (!checker) {
@@ -19670,7 +19670,7 @@ var factoryWithTypeCheckers = function(isValidElement, throwOnDirectAccess) {
   return ReactPropTypes;
 };
 
-var C__Projects_cacivy_reactTextscroll_node_modules_propTypes = createCommonjsModule(function (module) {
+var D__java_vsWS_reactTextscroll_node_modules_propTypes = createCommonjsModule(function (module) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -20336,10 +20336,10 @@ var StyleSheetManager = function (_Component) {
   return StyleSheetManager;
 }(react_1);
 
-StyleSheetManager.childContextTypes = (_StyleSheetManager$ch = {}, _StyleSheetManager$ch[CONTEXT_KEY] = C__Projects_cacivy_reactTextscroll_node_modules_propTypes.oneOfType([C__Projects_cacivy_reactTextscroll_node_modules_propTypes.instanceOf(StyleSheet), C__Projects_cacivy_reactTextscroll_node_modules_propTypes.instanceOf(ServerStyleSheet)]).isRequired, _StyleSheetManager$ch);
+StyleSheetManager.childContextTypes = (_StyleSheetManager$ch = {}, _StyleSheetManager$ch[CONTEXT_KEY] = D__java_vsWS_reactTextscroll_node_modules_propTypes.oneOfType([D__java_vsWS_reactTextscroll_node_modules_propTypes.instanceOf(StyleSheet), D__java_vsWS_reactTextscroll_node_modules_propTypes.instanceOf(ServerStyleSheet)]).isRequired, _StyleSheetManager$ch);
 
 StyleSheetManager.propTypes = {
-  sheet: C__Projects_cacivy_reactTextscroll_node_modules_propTypes.oneOfType([C__Projects_cacivy_reactTextscroll_node_modules_propTypes.instanceOf(StyleSheet), C__Projects_cacivy_reactTextscroll_node_modules_propTypes.instanceOf(ServerStyleSheet)]).isRequired
+  sheet: D__java_vsWS_reactTextscroll_node_modules_propTypes.oneOfType([D__java_vsWS_reactTextscroll_node_modules_propTypes.instanceOf(StyleSheet), D__java_vsWS_reactTextscroll_node_modules_propTypes.instanceOf(ServerStyleSheet)]).isRequired
 };
 
 //      
@@ -20648,10 +20648,10 @@ var _ThemeProvider$contex;
 var CHANNEL = '__styled-components__';
 var CHANNEL_NEXT = CHANNEL + 'next__';
 
-var CONTEXT_CHANNEL_SHAPE = C__Projects_cacivy_reactTextscroll_node_modules_propTypes.shape({
-  getTheme: C__Projects_cacivy_reactTextscroll_node_modules_propTypes.func,
-  subscribe: C__Projects_cacivy_reactTextscroll_node_modules_propTypes.func,
-  unsubscribe: C__Projects_cacivy_reactTextscroll_node_modules_propTypes.func
+var CONTEXT_CHANNEL_SHAPE = D__java_vsWS_reactTextscroll_node_modules_propTypes.shape({
+  getTheme: D__java_vsWS_reactTextscroll_node_modules_propTypes.func,
+  subscribe: D__java_vsWS_reactTextscroll_node_modules_propTypes.func,
+  unsubscribe: D__java_vsWS_reactTextscroll_node_modules_propTypes.func
 });
 
 var warnChannelDeprecated = void 0;
@@ -20760,7 +20760,7 @@ var ThemeProvider = function (_Component) {
   return ThemeProvider;
 }(react_1);
 
-ThemeProvider.childContextTypes = (_ThemeProvider$childC = {}, _ThemeProvider$childC[CHANNEL] = C__Projects_cacivy_reactTextscroll_node_modules_propTypes.func, _ThemeProvider$childC[CHANNEL_NEXT] = CONTEXT_CHANNEL_SHAPE, _ThemeProvider$childC);
+ThemeProvider.childContextTypes = (_ThemeProvider$childC = {}, _ThemeProvider$childC[CHANNEL] = D__java_vsWS_reactTextscroll_node_modules_propTypes.func, _ThemeProvider$childC[CHANNEL_NEXT] = CONTEXT_CHANNEL_SHAPE, _ThemeProvider$childC);
 ThemeProvider.contextTypes = (_ThemeProvider$contex = {}, _ThemeProvider$contex[CHANNEL_NEXT] = CONTEXT_CHANNEL_SHAPE, _ThemeProvider$contex);
 
 //      
@@ -21022,7 +21022,7 @@ var _StyledComponent = (function (ComponentStyle, constructWithOptions) {
       return StyledComponent;
     }(ParentComponent);
 
-    StyledComponent.contextTypes = (_StyledComponent$cont = {}, _StyledComponent$cont[CHANNEL] = C__Projects_cacivy_reactTextscroll_node_modules_propTypes.func, _StyledComponent$cont[CHANNEL_NEXT] = CONTEXT_CHANNEL_SHAPE, _StyledComponent$cont[CONTEXT_KEY] = C__Projects_cacivy_reactTextscroll_node_modules_propTypes.oneOfType([C__Projects_cacivy_reactTextscroll_node_modules_propTypes.instanceOf(StyleSheet), C__Projects_cacivy_reactTextscroll_node_modules_propTypes.instanceOf(ServerStyleSheet)]), _StyledComponent$cont);
+    StyledComponent.contextTypes = (_StyledComponent$cont = {}, _StyledComponent$cont[CHANNEL] = D__java_vsWS_reactTextscroll_node_modules_propTypes.func, _StyledComponent$cont[CHANNEL_NEXT] = CONTEXT_CHANNEL_SHAPE, _StyledComponent$cont[CONTEXT_KEY] = D__java_vsWS_reactTextscroll_node_modules_propTypes.oneOfType([D__java_vsWS_reactTextscroll_node_modules_propTypes.instanceOf(StyleSheet), D__java_vsWS_reactTextscroll_node_modules_propTypes.instanceOf(ServerStyleSheet)]), _StyledComponent$cont);
     StyledComponent.displayName = displayName;
     StyledComponent.styledComponentId = styledComponentId;
     StyledComponent.attrs = attrs;

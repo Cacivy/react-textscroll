@@ -129,7 +129,7 @@ function shouldUseNative() {
 	}
 }
 
-var D__java_vsWS_reactTextscroll_node_modules_objectAssign = shouldUseNative() ? Object.assign : function (target, source) {
+var C__Projects_cacivy_reactTextscroll_node_modules_objectAssign = shouldUseNative() ? Object.assign : function (target, source) {
 	var from;
 	var to = toObject(target);
 	var symbols;
@@ -357,7 +357,7 @@ var react_development = createCommonjsModule(function (module) {
 
 {
   (function() {
-var _assign = D__java_vsWS_reactTextscroll_node_modules_objectAssign;
+var _assign = C__Projects_cacivy_reactTextscroll_node_modules_objectAssign;
 var emptyObject = emptyObject_1;
 var invariant = invariant_1;
 var warning = warning_1;
@@ -2018,7 +2018,7 @@ function camelizeStyleName(string) {
 
 var camelizeStyleName_1 = camelizeStyleName;
 
-var D__java_vsWS_reactTextscroll_node_modules_react = createCommonjsModule(function (module) {
+var C__Projects_cacivy_reactTextscroll_node_modules_react = createCommonjsModule(function (module) {
 {
   module.exports = react_development;
 }
@@ -2036,11 +2036,11 @@ var reactDom_development = createCommonjsModule(function (module) {
 
 {
   (function() {
-var React = D__java_vsWS_reactTextscroll_node_modules_react;
+var React = C__Projects_cacivy_reactTextscroll_node_modules_react;
 var invariant = invariant_1;
 var warning = warning_1;
 var ExecutionEnvironment = ExecutionEnvironment_1;
-var _assign = D__java_vsWS_reactTextscroll_node_modules_objectAssign;
+var _assign = C__Projects_cacivy_reactTextscroll_node_modules_objectAssign;
 var emptyFunction = emptyFunction_1;
 var EventListener = EventListener_1;
 var getActiveElement = getActiveElement_1;
@@ -19387,7 +19387,7 @@ var factoryWithTypeCheckers = function(isValidElement, throwOnDirectAccess) {
       }
       // We need to check all keys in case some are required but missing from
       // props.
-      var allKeys = D__java_vsWS_reactTextscroll_node_modules_objectAssign({}, props[propName], shapeTypes);
+      var allKeys = C__Projects_cacivy_reactTextscroll_node_modules_objectAssign({}, props[propName], shapeTypes);
       for (var key in allKeys) {
         var checker = shapeTypes[key];
         if (!checker) {
@@ -19540,7 +19540,7 @@ var factoryWithTypeCheckers = function(isValidElement, throwOnDirectAccess) {
   return ReactPropTypes;
 };
 
-var D__java_vsWS_reactTextscroll_node_modules_propTypes = createCommonjsModule(function (module) {
+var C__Projects_cacivy_reactTextscroll_node_modules_propTypes = createCommonjsModule(function (module) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -20195,10 +20195,10 @@ var StyleSheetManager = function (_Component) {
   return StyleSheetManager;
 }(react_1);
 
-StyleSheetManager.childContextTypes = (_StyleSheetManager$ch = {}, _StyleSheetManager$ch[CONTEXT_KEY] = D__java_vsWS_reactTextscroll_node_modules_propTypes.oneOfType([D__java_vsWS_reactTextscroll_node_modules_propTypes.instanceOf(StyleSheet), D__java_vsWS_reactTextscroll_node_modules_propTypes.instanceOf(ServerStyleSheet)]).isRequired, _StyleSheetManager$ch);
+StyleSheetManager.childContextTypes = (_StyleSheetManager$ch = {}, _StyleSheetManager$ch[CONTEXT_KEY] = C__Projects_cacivy_reactTextscroll_node_modules_propTypes.oneOfType([C__Projects_cacivy_reactTextscroll_node_modules_propTypes.instanceOf(StyleSheet), C__Projects_cacivy_reactTextscroll_node_modules_propTypes.instanceOf(ServerStyleSheet)]).isRequired, _StyleSheetManager$ch);
 
 StyleSheetManager.propTypes = {
-  sheet: D__java_vsWS_reactTextscroll_node_modules_propTypes.oneOfType([D__java_vsWS_reactTextscroll_node_modules_propTypes.instanceOf(StyleSheet), D__java_vsWS_reactTextscroll_node_modules_propTypes.instanceOf(ServerStyleSheet)]).isRequired
+  sheet: C__Projects_cacivy_reactTextscroll_node_modules_propTypes.oneOfType([C__Projects_cacivy_reactTextscroll_node_modules_propTypes.instanceOf(StyleSheet), C__Projects_cacivy_reactTextscroll_node_modules_propTypes.instanceOf(ServerStyleSheet)]).isRequired
 };
 
 //      
@@ -20507,10 +20507,10 @@ var _ThemeProvider$contex;
 var CHANNEL = '__styled-components__';
 var CHANNEL_NEXT = CHANNEL + 'next__';
 
-var CONTEXT_CHANNEL_SHAPE = D__java_vsWS_reactTextscroll_node_modules_propTypes.shape({
-  getTheme: D__java_vsWS_reactTextscroll_node_modules_propTypes.func,
-  subscribe: D__java_vsWS_reactTextscroll_node_modules_propTypes.func,
-  unsubscribe: D__java_vsWS_reactTextscroll_node_modules_propTypes.func
+var CONTEXT_CHANNEL_SHAPE = C__Projects_cacivy_reactTextscroll_node_modules_propTypes.shape({
+  getTheme: C__Projects_cacivy_reactTextscroll_node_modules_propTypes.func,
+  subscribe: C__Projects_cacivy_reactTextscroll_node_modules_propTypes.func,
+  unsubscribe: C__Projects_cacivy_reactTextscroll_node_modules_propTypes.func
 });
 
 var warnChannelDeprecated = void 0;
@@ -20619,7 +20619,7 @@ var ThemeProvider = function (_Component) {
   return ThemeProvider;
 }(react_1);
 
-ThemeProvider.childContextTypes = (_ThemeProvider$childC = {}, _ThemeProvider$childC[CHANNEL] = D__java_vsWS_reactTextscroll_node_modules_propTypes.func, _ThemeProvider$childC[CHANNEL_NEXT] = CONTEXT_CHANNEL_SHAPE, _ThemeProvider$childC);
+ThemeProvider.childContextTypes = (_ThemeProvider$childC = {}, _ThemeProvider$childC[CHANNEL] = C__Projects_cacivy_reactTextscroll_node_modules_propTypes.func, _ThemeProvider$childC[CHANNEL_NEXT] = CONTEXT_CHANNEL_SHAPE, _ThemeProvider$childC);
 ThemeProvider.contextTypes = (_ThemeProvider$contex = {}, _ThemeProvider$contex[CHANNEL_NEXT] = CONTEXT_CHANNEL_SHAPE, _ThemeProvider$contex);
 
 //      
@@ -20881,7 +20881,7 @@ var _StyledComponent = (function (ComponentStyle, constructWithOptions) {
       return StyledComponent;
     }(ParentComponent);
 
-    StyledComponent.contextTypes = (_StyledComponent$cont = {}, _StyledComponent$cont[CHANNEL] = D__java_vsWS_reactTextscroll_node_modules_propTypes.func, _StyledComponent$cont[CHANNEL_NEXT] = CONTEXT_CHANNEL_SHAPE, _StyledComponent$cont[CONTEXT_KEY] = D__java_vsWS_reactTextscroll_node_modules_propTypes.oneOfType([D__java_vsWS_reactTextscroll_node_modules_propTypes.instanceOf(StyleSheet), D__java_vsWS_reactTextscroll_node_modules_propTypes.instanceOf(ServerStyleSheet)]), _StyledComponent$cont);
+    StyledComponent.contextTypes = (_StyledComponent$cont = {}, _StyledComponent$cont[CHANNEL] = C__Projects_cacivy_reactTextscroll_node_modules_propTypes.func, _StyledComponent$cont[CHANNEL_NEXT] = CONTEXT_CHANNEL_SHAPE, _StyledComponent$cont[CONTEXT_KEY] = C__Projects_cacivy_reactTextscroll_node_modules_propTypes.oneOfType([C__Projects_cacivy_reactTextscroll_node_modules_propTypes.instanceOf(StyleSheet), C__Projects_cacivy_reactTextscroll_node_modules_propTypes.instanceOf(ServerStyleSheet)]), _StyledComponent$cont);
     StyledComponent.displayName = displayName;
     StyledComponent.styledComponentId = styledComponentId;
     StyledComponent.attrs = attrs;
@@ -21132,10 +21132,10 @@ var StyledComponent = _StyledComponent(ComponentStyle, constructWithOptions);
 /* Instantiate exported singletons */
 var styled = _styled(StyledComponent, constructWithOptions);
 
-var HorizontalTextScroll = /** @class */ (function (_super) {
-    __extends(HorizontalTextScroll, _super);
-    function HorizontalTextScroll(props) {
-        var _this = _super.call(this, props) || this;
+var Horizontal = /** @class */ (function (_super) {
+    __extends(Horizontal, _super);
+    function Horizontal() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.state = {
             duration: 10,
             content_width: 500,
@@ -21143,7 +21143,7 @@ var HorizontalTextScroll = /** @class */ (function (_super) {
         };
         return _this;
     }
-    HorizontalTextScroll.prototype.componentDidMount = function () {
+    Horizontal.prototype.componentDidMount = function () {
         var dom = reactDom.findDOMNode(this.container);
         var parentElement = dom.parentElement;
         var children = dom.children;
@@ -21154,17 +21154,17 @@ var HorizontalTextScroll = /** @class */ (function (_super) {
             contentWidth += containerWidth;
         }
         contentWidth = contentWidth === 0 ? 500 : contentWidth;
-        var duration = (this.props.speed || 10) * contentWidth / 500000;
+        var duration = (this.props.speed || 100) * contentWidth / 500000;
         this.setState({
             duration: duration,
             content_width: contentWidth,
             container_width: containerWidth
         });
     };
-    HorizontalTextScroll.prototype.render = function () {
+    Horizontal.prototype.render = function () {
         var _this = this;
-        var Container = styled.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n        position: relative;\n        display: block;\n        width: auto;\n        left:", "px;\n        animation: changebox ", "s linear;\n        animation-play-state: running;\n        animation-fill-mode: forwards;\n        animation-iteration-count: infinite;\n        &:hover {\n            animation-play-state: paused;\n            cursor:default;\n        }\n        @keyframes changebox {\n            0% {\n            transform: translate3d(0, 0, 0);\n            }\n            100% {\n            transform: translate3d( -", "px, 0, 0);\n            }\n        } \n        "], ["\n        position: relative;\n        display: block;\n        width: auto;\n        left:", "px;\n        animation: changebox ", "s linear;\n        animation-play-state: running;\n        animation-fill-mode: forwards;\n        animation-iteration-count: infinite;\n        &:hover {\n            animation-play-state: paused;\n            cursor:default;\n        }\n        @keyframes changebox {\n            0% {\n            transform: translate3d(0, 0, 0);\n            }\n            100% {\n            transform: translate3d( -", "px, 0, 0);\n            }\n        } \n        "])), this.state.container_width, this.state.duration, this.state.content_width);
-        var Item = styled.span(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n        display:inline-block;\n        margin-right: ", "px\n        "], ["\n        display:inline-block;\n        margin-right: ", "px\n        "])), this.state.container_width);
+        var Container = styled.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n        position: relative;\n        left:", "px;\n        animation: changebox ", "s linear infinite;\n        animation-play-state: running;\n        animation-fill-mode: forwards;\n        &:hover {\n            animation-play-state: paused;\n            cursor: default;\n        }\n        @keyframes changebox {\n            0% {\n                transform: translateX(0);\n            }\n            100% {\n                transform: translateX(-", "px);\n            }\n        } \n        "], ["\n        position: relative;\n        left:", "px;\n        animation: changebox ", "s linear infinite;\n        animation-play-state: running;\n        animation-fill-mode: forwards;\n        &:hover {\n            animation-play-state: paused;\n            cursor: default;\n        }\n        @keyframes changebox {\n            0% {\n                transform: translateX(0);\n            }\n            100% {\n                transform: translateX(-", "px);\n            }\n        } \n        "])), this.state.container_width, this.state.duration, this.state.content_width);
+        var Item = styled.span(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n            display:inline-block;\n            margin-right: ", "px\n        "], ["\n            display:inline-block;\n            margin-right: ", "px\n        "])), this.state.container_width);
         return (react.createElement("div", { className: this.props.className },
             react.createElement(Container, { ref: function (div) { return _this.container = div; } }, this.props.text.map(function (e, i) {
                 return (react.createElement(Item, { key: i },
@@ -21172,24 +21172,31 @@ var HorizontalTextScroll = /** @class */ (function (_super) {
                     e));
             }))));
     };
-    return HorizontalTextScroll;
+    return Horizontal;
 }(react.Component));
-var StyledHorizontalTextScroll = styled(HorizontalTextScroll)(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n    width:100%;\n    height: 100%;\n    overflow: hidden;\n    word-break: keep-all;\n    white-space: nowrap;\n    display:flex;\n    align-items:center ;\n"], ["\n    width:100%;\n    height: 100%;\n    overflow: hidden;\n    word-break: keep-all;\n    white-space: nowrap;\n    display:flex;\n    align-items:center ;\n"])));
+var StyledHorizontal = styled(Horizontal)(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n    width:100%;\n    height: 100%;\n    overflow: hidden;\n    word-break: keep-all;\n    white-space: nowrap;\n"], ["\n    width:100%;\n    height: 100%;\n    overflow: hidden;\n    word-break: keep-all;\n    white-space: nowrap;\n"])));
 var templateObject_1;
 var templateObject_2;
 var templateObject_3;
 
-var App$1 = /** @class */ (function (_super) {
-    __extends(App, _super);
-    function App() {
+var TextScroll = /** @class */ (function (_super) {
+    __extends(TextScroll, _super);
+    function TextScroll() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    App.prototype.render = function () {
+    TextScroll.prototype.render = function () {
         return (this.props.mode === 'horizontal'
-            && react.createElement(StyledHorizontalTextScroll, { text: this.props.text, speed: this.props.speed }));
+            && react.createElement(StyledHorizontal, { text: this.props.text, speed: this.props.speed }));
     };
-    return App;
+    return TextScroll;
 }(react.Component));
+
+var Mode;
+(function (Mode) {
+    Mode["vertical"] = "vertical";
+    Mode["horizontal"] = "horizontal";
+})(Mode || (Mode = {}));
+//# sourceMappingURL=interface.js.map
 
 var App = /** @class */ (function (_super) {
     __extends(App, _super);
@@ -21203,7 +21210,7 @@ var App = /** @class */ (function (_super) {
     }
     App.prototype.render = function () {
         return (react.createElement("div", { style: { width: '400px', border: '1px solid black' } },
-            react.createElement(App$1, { text: this.data, mode: 'horizontal', speed: 5000 })));
+            react.createElement(TextScroll, { text: this.data, mode: Mode.horizontal, speed: 5000 })));
     };
     return App;
 }(react.Component));

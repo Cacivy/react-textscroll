@@ -1,18 +1,23 @@
 import React from 'react'
 import styled from 'styled-components'
 import ReactDOM from 'react-dom'
-import * as Interface from '../interface/ITextScroll'
-class HorizontalTextScroll extends React.Component<Interface.TextScrollProp, Interface.TextScrollState> {
-    container: any
-    constructor(props: Interface.TextScrollProp) {
-        super(props)
-        this.state = {
-            duration: 10,
-            content_width: 500,
-            container_width: 500,
-        }
+import {TextScrollProp } from '../interface'
 
+interface TextScrollState {
+  duration: number
+  content_width?: number
+  container_width?: number
+}
+
+class Horizontal extends React.Component<TextScrollProp, TextScrollState> {
+    container: any
+
+    state = {
+      duration: 10,
+      content_width: 500,
+      container_width: 500,
     }
+
     componentDidMount() {
         let dom = ReactDOM.findDOMNode(this.container)
         let parentElement = dom.parentElement
@@ -25,7 +30,7 @@ class HorizontalTextScroll extends React.Component<Interface.TextScrollProp, Int
         }
         contentWidth = contentWidth === 0 ? 500 : contentWidth
 
-        let duration = (this.props.speed || 10) * contentWidth / 500000
+        let duration = (this.props.speed || 100) * contentWidth / 500000
         this.setState({
             duration: duration,
             content_width: contentWidth,
@@ -36,29 +41,26 @@ class HorizontalTextScroll extends React.Component<Interface.TextScrollProp, Int
     render() {
         const Container = styled.div`
         position: relative;
-        display: block;
-        width: auto;
         left:${this.state.container_width}px;
-        animation: changebox ${this.state.duration}s linear;
+        animation: changebox ${this.state.duration}s linear infinite;
         animation-play-state: running;
         animation-fill-mode: forwards;
-        animation-iteration-count: infinite;
         &:hover {
             animation-play-state: paused;
-            cursor:default;
+            cursor: default;
         }
         @keyframes changebox {
             0% {
-            transform: translate3d(0, 0, 0);
+                transform: translateX(0);
             }
             100% {
-            transform: translate3d( -${this.state.content_width}px, 0, 0);
+                transform: translateX(-${this.state.content_width}px);
             }
         } 
         `
         const Item = styled.span`
-        display:inline-block;
-        margin-right: ${this.state.container_width}px
+            display:inline-block;
+            margin-right: ${this.state.container_width}px
         `
         return (
             <div className={this.props.className}>
@@ -73,13 +75,11 @@ class HorizontalTextScroll extends React.Component<Interface.TextScrollProp, Int
         )
     }
 }
-const StyledHorizontalTextScroll = styled(HorizontalTextScroll) `
+const StyledHorizontal = styled(Horizontal) `
     width:100%;
     height: 100%;
     overflow: hidden;
     word-break: keep-all;
     white-space: nowrap;
-    display:flex;
-    align-items:center ;
 `
-export default StyledHorizontalTextScroll
+export default StyledHorizontal

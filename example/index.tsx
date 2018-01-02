@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import TextScroll from '../src/index'
+import { Mode } from '../src/interface'
 
 class App extends React.Component {
   data: string[] = [
@@ -12,7 +13,7 @@ class App extends React.Component {
   render() {
     return (
       <div style={{ width: '400px', border: '1px solid black' }}>
-        <TextScroll text={this.data} mode={'horizontal'} speed={5000} />
+        <TextScroll text={this.data} mode={Mode.horizontal} speed={5000} />
       </div>
     )
   }

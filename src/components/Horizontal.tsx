@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import ReactDOM from 'react-dom'
-import {TextScrollProp } from '../interface'
+import { TextScrollProp } from '../interface'
 
 interface TextScrollState {
   duration: number
@@ -75,6 +75,7 @@ class Horizontal extends React.Component<TextScrollProp, TextScrollState> {
         )
     }
 }
+
 const StyledHorizontal = styled(Horizontal) `
     width:100%;
     height: 100%;

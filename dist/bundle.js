@@ -8,9 +8,9 @@ React = React && React.hasOwnProperty('default') ? React['default'] : React;
 styled = styled && styled.hasOwnProperty('default') ? styled['default'] : styled;
 ReactDOM = ReactDOM && ReactDOM.hasOwnProperty('default') ? ReactDOM['default'] : ReactDOM;
 
-var TextScroll = /** @class */ (function (_super) {
-    tslib_1.__extends(TextScroll, _super);
-    function TextScroll(props) {
+var HorizontalTextScroll = /** @class */ (function (_super) {
+    tslib_1.__extends(HorizontalTextScroll, _super);
+    function HorizontalTextScroll(props) {
         var _this = _super.call(this, props) || this;
         _this.state = {
             duration: 10,
@@ -19,7 +19,7 @@ var TextScroll = /** @class */ (function (_super) {
         };
         return _this;
     }
-    TextScroll.prototype.componentDidMount = function () {
+    HorizontalTextScroll.prototype.componentDidMount = function () {
         var dom = ReactDOM.findDOMNode(this.container);
         var parentElement = dom.parentElement;
         var children = dom.children;
@@ -37,7 +37,7 @@ var TextScroll = /** @class */ (function (_super) {
             container_width: containerWidth
         });
     };
-    TextScroll.prototype.render = function () {
+    HorizontalTextScroll.prototype.render = function () {
         var _this = this;
         var Container = styled.div(templateObject_1 || (templateObject_1 = tslib_1.__makeTemplateObject(["\n        position: relative;\n        display: block;\n        width: auto;\n        left:", "px;\n        animation: changebox ", "s linear;\n        animation-play-state: running;\n        animation-fill-mode: forwards;\n        animation-iteration-count: infinite;\n        &:hover {\n            animation-play-state: paused;\n            cursor:default;\n        }\n        @keyframes changebox {\n            0% {\n            transform: translate3d(0, 0, 0);\n            }\n            100% {\n            transform: translate3d( -", "px, 0, 0);\n            }\n        } \n        "], ["\n        position: relative;\n        display: block;\n        width: auto;\n        left:", "px;\n        animation: changebox ", "s linear;\n        animation-play-state: running;\n        animation-fill-mode: forwards;\n        animation-iteration-count: infinite;\n        &:hover {\n            animation-play-state: paused;\n            cursor:default;\n        }\n        @keyframes changebox {\n            0% {\n            transform: translate3d(0, 0, 0);\n            }\n            100% {\n            transform: translate3d( -", "px, 0, 0);\n            }\n        } \n        "])), this.state.container_width, this.state.duration, this.state.content_width);
         var Item = styled.span(templateObject_2 || (templateObject_2 = tslib_1.__makeTemplateObject(["\n        display:inline-block;\n        margin-right: ", "px\n        "], ["\n        display:inline-block;\n        margin-right: ", "px\n        "])), this.state.container_width);
@@ -48,27 +48,21 @@ var TextScroll = /** @class */ (function (_super) {
                     e));
             }))));
     };
-    return TextScroll;
+    return HorizontalTextScroll;
 }(React.Component));
-var StyledTextScroll = styled(TextScroll)(templateObject_3 || (templateObject_3 = tslib_1.__makeTemplateObject(["\n    width:100%;\n    height: 100%;\n    overflow: hidden;\n    word-break: keep-all;\n    white-space: nowrap;\n    display:flex;\n    align-items:center ;\n"], ["\n    width:100%;\n    height: 100%;\n    overflow: hidden;\n    word-break: keep-all;\n    white-space: nowrap;\n    display:flex;\n    align-items:center ;\n"])));
+var StyledHorizontalTextScroll = styled(HorizontalTextScroll)(templateObject_3 || (templateObject_3 = tslib_1.__makeTemplateObject(["\n    width:100%;\n    height: 100%;\n    overflow: hidden;\n    word-break: keep-all;\n    white-space: nowrap;\n    display:flex;\n    align-items:center ;\n"], ["\n    width:100%;\n    height: 100%;\n    overflow: hidden;\n    word-break: keep-all;\n    white-space: nowrap;\n    display:flex;\n    align-items:center ;\n"])));
 var templateObject_1;
 var templateObject_2;
 var templateObject_3;
-//# sourceMappingURL=TextScroll.js.map
 
 var App = /** @class */ (function (_super) {
     tslib_1.__extends(App, _super);
     function App() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.data = [
-            '向上滚动动画',
-            '向上滚',
-        ];
-        return _this;
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     App.prototype.render = function () {
-        return (React.createElement("div", { style: { width: '400px', border: '1px solid black' } },
-            React.createElement(StyledTextScroll, { text: this.data, mode: 'horizontal', speed: 5000 })));
+        return (this.props.mode === 'horizontal'
+            && React.createElement(StyledHorizontalTextScroll, { text: this.props.text, speed: this.props.speed }));
     };
     return App;
 }(React.Component));

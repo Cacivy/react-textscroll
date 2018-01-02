@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import ReactDOM from 'react-dom'
 import * as Interface from '../interface/ITextScroll'
-class TextScroll extends React.Component<Interface.TextScrollProp, Interface.TextScrollState> {
+class HorizontalTextScroll extends React.Component<Interface.TextScrollProp, Interface.TextScrollState> {
     container: any
     constructor(props: Interface.TextScrollProp) {
         super(props)
@@ -73,7 +73,7 @@ class TextScroll extends React.Component<Interface.TextScrollProp, Interface.Tex
         )
     }
 }
-const StyledTextScroll = styled(TextScroll) `
+const StyledHorizontalTextScroll = styled(HorizontalTextScroll) `
     width:100%;
     height: 100%;
     overflow: hidden;
@@ -82,4 +82,4 @@ const StyledTextScroll = styled(TextScroll) `
     display:flex;
     align-items:center ;
 `
-export default StyledTextScroll
+export default StyledHorizontalTextScroll

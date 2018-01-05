@@ -129,7 +129,7 @@ function shouldUseNative() {
 	}
 }
 
-var C__Projects_cacivy_reactTextscroll_node_modules_objectAssign = shouldUseNative() ? Object.assign : function (target, source) {
+var D__java_vsWS_reactTextscroll_node_modules_objectAssign = shouldUseNative() ? Object.assign : function (target, source) {
 	var from;
 	var to = toObject(target);
 	var symbols;
@@ -357,7 +357,7 @@ var react_development = createCommonjsModule(function (module) {
 
 {
   (function() {
-var _assign = C__Projects_cacivy_reactTextscroll_node_modules_objectAssign;
+var _assign = D__java_vsWS_reactTextscroll_node_modules_objectAssign;
 var emptyObject = emptyObject_1;
 var invariant = invariant_1;
 var warning = warning_1;
@@ -2018,7 +2018,7 @@ function camelizeStyleName(string) {
 
 var camelizeStyleName_1 = camelizeStyleName;
 
-var C__Projects_cacivy_reactTextscroll_node_modules_react = createCommonjsModule(function (module) {
+var D__java_vsWS_reactTextscroll_node_modules_react = createCommonjsModule(function (module) {
 {
   module.exports = react_development;
 }
@@ -2036,11 +2036,11 @@ var reactDom_development = createCommonjsModule(function (module) {
 
 {
   (function() {
-var React = C__Projects_cacivy_reactTextscroll_node_modules_react;
+var React = D__java_vsWS_reactTextscroll_node_modules_react;
 var invariant = invariant_1;
 var warning = warning_1;
 var ExecutionEnvironment = ExecutionEnvironment_1;
-var _assign = C__Projects_cacivy_reactTextscroll_node_modules_objectAssign;
+var _assign = D__java_vsWS_reactTextscroll_node_modules_objectAssign;
 var emptyFunction = emptyFunction_1;
 var EventListener = EventListener_1;
 var getActiveElement = getActiveElement_1;
@@ -19387,7 +19387,7 @@ var factoryWithTypeCheckers = function(isValidElement, throwOnDirectAccess) {
       }
       // We need to check all keys in case some are required but missing from
       // props.
-      var allKeys = C__Projects_cacivy_reactTextscroll_node_modules_objectAssign({}, props[propName], shapeTypes);
+      var allKeys = D__java_vsWS_reactTextscroll_node_modules_objectAssign({}, props[propName], shapeTypes);
       for (var key in allKeys) {
         var checker = shapeTypes[key];
         if (!checker) {
@@ -19540,7 +19540,7 @@ var factoryWithTypeCheckers = function(isValidElement, throwOnDirectAccess) {
   return ReactPropTypes;
 };
 
-var C__Projects_cacivy_reactTextscroll_node_modules_propTypes = createCommonjsModule(function (module) {
+var D__java_vsWS_reactTextscroll_node_modules_propTypes = createCommonjsModule(function (module) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -20195,10 +20195,10 @@ var StyleSheetManager = function (_Component) {
   return StyleSheetManager;
 }(react_1);
 
-StyleSheetManager.childContextTypes = (_StyleSheetManager$ch = {}, _StyleSheetManager$ch[CONTEXT_KEY] = C__Projects_cacivy_reactTextscroll_node_modules_propTypes.oneOfType([C__Projects_cacivy_reactTextscroll_node_modules_propTypes.instanceOf(StyleSheet), C__Projects_cacivy_reactTextscroll_node_modules_propTypes.instanceOf(ServerStyleSheet)]).isRequired, _StyleSheetManager$ch);
+StyleSheetManager.childContextTypes = (_StyleSheetManager$ch = {}, _StyleSheetManager$ch[CONTEXT_KEY] = D__java_vsWS_reactTextscroll_node_modules_propTypes.oneOfType([D__java_vsWS_reactTextscroll_node_modules_propTypes.instanceOf(StyleSheet), D__java_vsWS_reactTextscroll_node_modules_propTypes.instanceOf(ServerStyleSheet)]).isRequired, _StyleSheetManager$ch);
 
 StyleSheetManager.propTypes = {
-  sheet: C__Projects_cacivy_reactTextscroll_node_modules_propTypes.oneOfType([C__Projects_cacivy_reactTextscroll_node_modules_propTypes.instanceOf(StyleSheet), C__Projects_cacivy_reactTextscroll_node_modules_propTypes.instanceOf(ServerStyleSheet)]).isRequired
+  sheet: D__java_vsWS_reactTextscroll_node_modules_propTypes.oneOfType([D__java_vsWS_reactTextscroll_node_modules_propTypes.instanceOf(StyleSheet), D__java_vsWS_reactTextscroll_node_modules_propTypes.instanceOf(ServerStyleSheet)]).isRequired
 };
 
 //      
@@ -20507,10 +20507,10 @@ var _ThemeProvider$contex;
 var CHANNEL = '__styled-components__';
 var CHANNEL_NEXT = CHANNEL + 'next__';
 
-var CONTEXT_CHANNEL_SHAPE = C__Projects_cacivy_reactTextscroll_node_modules_propTypes.shape({
-  getTheme: C__Projects_cacivy_reactTextscroll_node_modules_propTypes.func,
-  subscribe: C__Projects_cacivy_reactTextscroll_node_modules_propTypes.func,
-  unsubscribe: C__Projects_cacivy_reactTextscroll_node_modules_propTypes.func
+var CONTEXT_CHANNEL_SHAPE = D__java_vsWS_reactTextscroll_node_modules_propTypes.shape({
+  getTheme: D__java_vsWS_reactTextscroll_node_modules_propTypes.func,
+  subscribe: D__java_vsWS_reactTextscroll_node_modules_propTypes.func,
+  unsubscribe: D__java_vsWS_reactTextscroll_node_modules_propTypes.func
 });
 
 var warnChannelDeprecated = void 0;
@@ -20619,7 +20619,7 @@ var ThemeProvider = function (_Component) {
   return ThemeProvider;
 }(react_1);
 
-ThemeProvider.childContextTypes = (_ThemeProvider$childC = {}, _ThemeProvider$childC[CHANNEL] = C__Projects_cacivy_reactTextscroll_node_modules_propTypes.func, _ThemeProvider$childC[CHANNEL_NEXT] = CONTEXT_CHANNEL_SHAPE, _ThemeProvider$childC);
+ThemeProvider.childContextTypes = (_ThemeProvider$childC = {}, _ThemeProvider$childC[CHANNEL] = D__java_vsWS_reactTextscroll_node_modules_propTypes.func, _ThemeProvider$childC[CHANNEL_NEXT] = CONTEXT_CHANNEL_SHAPE, _ThemeProvider$childC);
 ThemeProvider.contextTypes = (_ThemeProvider$contex = {}, _ThemeProvider$contex[CHANNEL_NEXT] = CONTEXT_CHANNEL_SHAPE, _ThemeProvider$contex);
 
 //      
@@ -20881,7 +20881,7 @@ var _StyledComponent = (function (ComponentStyle, constructWithOptions) {
       return StyledComponent;
     }(ParentComponent);
 
-    StyledComponent.contextTypes = (_StyledComponent$cont = {}, _StyledComponent$cont[CHANNEL] = C__Projects_cacivy_reactTextscroll_node_modules_propTypes.func, _StyledComponent$cont[CHANNEL_NEXT] = CONTEXT_CHANNEL_SHAPE, _StyledComponent$cont[CONTEXT_KEY] = C__Projects_cacivy_reactTextscroll_node_modules_propTypes.oneOfType([C__Projects_cacivy_reactTextscroll_node_modules_propTypes.instanceOf(StyleSheet), C__Projects_cacivy_reactTextscroll_node_modules_propTypes.instanceOf(ServerStyleSheet)]), _StyledComponent$cont);
+    StyledComponent.contextTypes = (_StyledComponent$cont = {}, _StyledComponent$cont[CHANNEL] = D__java_vsWS_reactTextscroll_node_modules_propTypes.func, _StyledComponent$cont[CHANNEL_NEXT] = CONTEXT_CHANNEL_SHAPE, _StyledComponent$cont[CONTEXT_KEY] = D__java_vsWS_reactTextscroll_node_modules_propTypes.oneOfType([D__java_vsWS_reactTextscroll_node_modules_propTypes.instanceOf(StyleSheet), D__java_vsWS_reactTextscroll_node_modules_propTypes.instanceOf(ServerStyleSheet)]), _StyledComponent$cont);
     StyledComponent.displayName = displayName;
     StyledComponent.styledComponentId = styledComponentId;
     StyledComponent.attrs = attrs;
@@ -21137,7 +21137,7 @@ var Horizontal = /** @class */ (function (_super) {
     function Horizontal() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.state = {
-            duration: 10,
+            duration: 5000,
             content_width: 500,
             container_width: 500,
         };
@@ -21154,7 +21154,7 @@ var Horizontal = /** @class */ (function (_super) {
             contentWidth += containerWidth;
         }
         contentWidth = contentWidth === 0 ? 500 : contentWidth;
-        var duration = (this.props.speed || 100) * contentWidth / 500000;
+        var duration = (this.props.speed || 5000) * contentWidth / 500000;
         this.setState({
             duration: duration,
             content_width: contentWidth,
@@ -21178,6 +21178,81 @@ var StyledHorizontal = styled(Horizontal)(templateObject_3 || (templateObject_3 
 var templateObject_1;
 var templateObject_2;
 var templateObject_3;
+//# sourceMappingURL=Horizontal.js.map
+
+var Vertical = /** @class */ (function (_super) {
+    __extends(Vertical, _super);
+    function Vertical() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.request = 0;
+        _this.time = 0;
+        _this.run = true;
+        _this.state = {
+            speed: 10,
+            position: 21,
+            maxPosition: 0,
+        };
+        _this.tick = function () {
+            if (_this.run) {
+                if (_this.time++ === 60) {
+                    if (_this.run && parseInt((_this.state.maxPosition + _this.state.position).toFixed(2), null) <= 21) {
+                        _this.setState({ position: 0 });
+                    }
+                    _this.run = false;
+                    setTimeout(function () {
+                        _this.run = true;
+                        _this.time = 0;
+                    }, 500);
+                }
+                else {
+                    _this.setState({ position: (_this.state.position - 21 / 60) });
+                }
+            }
+            requestAnimationFrame(_this.tick);
+        };
+        _this.handleMouseEnter = function () {
+            console.log(111, _this.run);
+            _this.run = false;
+            // this.setState({ run: false })
+            console.log(111, _this.run);
+        };
+        _this.handleMouseLeave = function () {
+            console.log(22, _this.run);
+            _this.run = true;
+            // this.setState({ run: true })
+            console.log(22, _this.run);
+        };
+        return _this;
+    }
+    Vertical.prototype.componentDidMount = function () {
+        var dom = reactDom.findDOMNode(this.container);
+        var children = dom.children;
+        // let minHeight = this.state.minHeight
+        // for (let i = 0; i < children.length; i++) {
+        //   const height = children[i].scrollHeight
+        //   if (height > minHeight) {
+        //     minHeight = height
+        //   }
+        // }
+        this.setState({ maxPosition: dom.scrollHeight });
+        this.request = requestAnimationFrame(this.tick);
+    };
+    Vertical.prototype.componentWillUnmount = function () {
+        cancelAnimationFrame(this.request);
+    };
+    Vertical.prototype.render = function () {
+        var _this = this;
+        var ItemBox = styled.div(templateObject_1$1 || (templateObject_1$1 = __makeTemplateObject(["\n      display: flex;\n      flex-direction: column;\n      position: relative;\n      transition: all 10s;\n      top:", "px;\n      white-space:nowrap;\n    "], ["\n      display: flex;\n      flex-direction: column;\n      position: relative;\n      transition: all 10s;\n      top:", "px;\n      white-space:nowrap;\n    "])), this.state.position);
+        return (react.createElement("div", { className: this.props.className },
+            react.createElement(ItemBox, { ref: function (div) { return _this.container = div; }, onMouseEnter: this.handleMouseEnter, onMouseLeave: this.handleMouseLeave }, this.props.text.map(function (e, i) {
+                return (react.createElement("div", { key: i, style: { textOverflow: 'ellipsis', overflow: 'hidden', cursor: 'default' }, title: e }, e));
+            }))));
+    };
+    return Vertical;
+}(react.Component));
+var StyledVertical = styled(Vertical)(templateObject_2$1 || (templateObject_2$1 = __makeTemplateObject(["\n    width:100%;\n    height:21px;\n    box-sizing:border-box;\n    overflow:hidden; \n"], ["\n    width:100%;\n    height:21px;\n    box-sizing:border-box;\n    overflow:hidden; \n"])));
+var templateObject_1$1;
+var templateObject_2$1;
 
 var TextScroll = /** @class */ (function (_super) {
     __extends(TextScroll, _super);
@@ -21185,8 +21260,9 @@ var TextScroll = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     TextScroll.prototype.render = function () {
-        return (this.props.mode === 'horizontal'
-            && react.createElement(StyledHorizontal, { text: this.props.text, speed: this.props.speed }));
+        return (this.props.mode === 'horizontal' ?
+            react.createElement(StyledHorizontal, { text: this.props.text, speed: this.props.speed }) :
+            react.createElement(StyledVertical, { text: this.props.text, speed: this.props.speed }));
     };
     return TextScroll;
 }(react.Component));
@@ -21205,12 +21281,14 @@ var App = /** @class */ (function (_super) {
         _this.data = [
             '向上滚动动画',
             '向上滚',
+            '还是上面的例子，我们将transition属性合并，并扩展几个浏览器，如下CSS代码：',
+            '向上滚动动画',
         ];
         return _this;
     }
     App.prototype.render = function () {
-        return (react.createElement("div", { style: { width: '400px', border: '1px solid black' } },
-            react.createElement(TextScroll, { text: this.data, mode: Mode.horizontal, speed: 5000 })));
+        return (react.createElement("div", { style: { width: '200px', border: '1px solid black' } },
+            react.createElement(TextScroll, { text: this.data, mode: Mode.vertical, speed: 5000 })));
     };
     return App;
 }(react.Component));

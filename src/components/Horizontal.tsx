@@ -13,7 +13,7 @@ class Horizontal extends React.Component<TextScrollProp, TextScrollState> {
     container: any
 
     state = {
-      duration: 10,
+      duration: 5000,
       content_width: 500,
       container_width: 500,
     }
@@ -30,7 +30,7 @@ class Horizontal extends React.Component<TextScrollProp, TextScrollState> {
         }
         contentWidth = contentWidth === 0 ? 500 : contentWidth
 
-        let duration = (this.props.speed || 100) * contentWidth / 500000
+        let duration = (this.props.speed || 5000) * contentWidth / 500000
         this.setState({
             duration: duration,
             content_width: contentWidth,

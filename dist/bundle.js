@@ -13,7 +13,7 @@ var Horizontal = /** @class */ (function (_super) {
     function Horizontal() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.state = {
-            duration: 10,
+            duration: 5000,
             content_width: 500,
             container_width: 500,
         };
@@ -30,7 +30,7 @@ var Horizontal = /** @class */ (function (_super) {
             contentWidth += containerWidth;
         }
         contentWidth = contentWidth === 0 ? 500 : contentWidth;
-        var duration = (this.props.speed || 100) * contentWidth / 500000;
+        var duration = (this.props.speed || 5000) * contentWidth / 500000;
         this.setState({
             duration: duration,
             content_width: contentWidth,
@@ -54,6 +54,81 @@ var StyledHorizontal = styled(Horizontal)(templateObject_3 || (templateObject_3 
 var templateObject_1;
 var templateObject_2;
 var templateObject_3;
+//# sourceMappingURL=Horizontal.js.map
+
+var Vertical = /** @class */ (function (_super) {
+    tslib_1.__extends(Vertical, _super);
+    function Vertical() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.request = 0;
+        _this.time = 0;
+        _this.run = true;
+        _this.state = {
+            speed: 10,
+            position: 21,
+            maxPosition: 0,
+        };
+        _this.tick = function () {
+            if (_this.run) {
+                if (_this.time++ === 60) {
+                    if (_this.run && parseInt((_this.state.maxPosition + _this.state.position).toFixed(2), null) <= 21) {
+                        _this.setState({ position: 0 });
+                    }
+                    _this.run = false;
+                    setTimeout(function () {
+                        _this.run = true;
+                        _this.time = 0;
+                    }, 500);
+                }
+                else {
+                    _this.setState({ position: (_this.state.position - 21 / 60) });
+                }
+            }
+            requestAnimationFrame(_this.tick);
+        };
+        _this.handleMouseEnter = function () {
+            console.log(111, _this.run);
+            _this.run = false;
+            // this.setState({ run: false })
+            console.log(111, _this.run);
+        };
+        _this.handleMouseLeave = function () {
+            console.log(22, _this.run);
+            _this.run = true;
+            // this.setState({ run: true })
+            console.log(22, _this.run);
+        };
+        return _this;
+    }
+    Vertical.prototype.componentDidMount = function () {
+        var dom = ReactDOM.findDOMNode(this.container);
+        var children = dom.children;
+        // let minHeight = this.state.minHeight
+        // for (let i = 0; i < children.length; i++) {
+        //   const height = children[i].scrollHeight
+        //   if (height > minHeight) {
+        //     minHeight = height
+        //   }
+        // }
+        this.setState({ maxPosition: dom.scrollHeight });
+        this.request = requestAnimationFrame(this.tick);
+    };
+    Vertical.prototype.componentWillUnmount = function () {
+        cancelAnimationFrame(this.request);
+    };
+    Vertical.prototype.render = function () {
+        var _this = this;
+        var ItemBox = styled.div(templateObject_1$1 || (templateObject_1$1 = tslib_1.__makeTemplateObject(["\n      display: flex;\n      flex-direction: column;\n      position: relative;\n      transition: all 10s;\n      top:", "px;\n      white-space:nowrap;\n    "], ["\n      display: flex;\n      flex-direction: column;\n      position: relative;\n      transition: all 10s;\n      top:", "px;\n      white-space:nowrap;\n    "])), this.state.position);
+        return (React.createElement("div", { className: this.props.className },
+            React.createElement(ItemBox, { ref: function (div) { return _this.container = div; }, onMouseEnter: this.handleMouseEnter, onMouseLeave: this.handleMouseLeave }, this.props.text.map(function (e, i) {
+                return (React.createElement("div", { key: i, style: { textOverflow: 'ellipsis', overflow: 'hidden', cursor: 'default' }, title: e }, e));
+            }))));
+    };
+    return Vertical;
+}(React.Component));
+var StyledVertical = styled(Vertical)(templateObject_2$1 || (templateObject_2$1 = tslib_1.__makeTemplateObject(["\n    width:100%;\n    height:21px;\n    box-sizing:border-box;\n    overflow:hidden; \n"], ["\n    width:100%;\n    height:21px;\n    box-sizing:border-box;\n    overflow:hidden; \n"])));
+var templateObject_1$1;
+var templateObject_2$1;
 
 var TextScroll = /** @class */ (function (_super) {
     tslib_1.__extends(TextScroll, _super);
@@ -61,8 +136,9 @@ var TextScroll = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     TextScroll.prototype.render = function () {
-        return (this.props.mode === 'horizontal'
-            && React.createElement(StyledHorizontal, { text: this.props.text, speed: this.props.speed }));
+        return (this.props.mode === 'horizontal' ?
+            React.createElement(StyledHorizontal, { text: this.props.text, speed: this.props.speed }) :
+            React.createElement(StyledVertical, { text: this.props.text, speed: this.props.speed }));
     };
     return TextScroll;
 }(React.Component));

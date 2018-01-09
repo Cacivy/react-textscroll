@@ -1,18 +1,16 @@
 import React from 'react'
-import styled from 'styled-components'
+import Horizontal from './components/Horizontal'
+import Vertical from './components/Vertical'
+import { TextScrollProp } from './interface'
 
-class App extends React.Component<{className: string}> {
+class TextScroll extends React.Component<TextScrollProp> {
   render() {
     return (
-      <div className={this.props.className}>
-        TextScroll cadsasad
-      </div>
+      this.props.mode === 'horizontal' ?
+        <Horizontal text={this.props.text} speed={this.props.speed} /> :
+        <Vertical text={this.props.text} speed={this.props.speed} />
     )
   }
 }
 
-const StyledApp = styled(App)`
-  color: #abc;
-`
-
-export default StyledApp
+export default TextScroll

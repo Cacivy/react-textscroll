@@ -4,7 +4,7 @@
     "module": "esnext",
     "jsx": "react",
     "sourceMap": true,
-    "strict": true,
+    "strict": false,
     "allowSyntheticDefaultImports": true
   }
 }

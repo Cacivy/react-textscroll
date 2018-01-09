@@ -21278,27 +21278,162 @@ var StyledComponent = _StyledComponent(ComponentStyle, constructWithOptions);
 
 var styled = _styled(StyledComponent, constructWithOptions);
 
-var App$1 = /** @class */ (function (_super) {
-    __extends(App, _super);
-    function App() {
+var Horizontal = /** @class */ (function (_super) {
+    __extends(Horizontal, _super);
+    function Horizontal() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = {
+            duration: 5000,
+            content_width: 500,
+            container_width: 500,
+        };
+        return _this;
+    }
+    Horizontal.prototype.componentDidMount = function () {
+        var dom = reactDom.findDOMNode(this.container);
+        var parentElement = dom.parentElement;
+        var children = dom.children;
+        var containerWidth = parentElement ? parentElement.clientWidth : 500;
+        var contentWidth = 0;
+        for (var i = 0; i < children.length; i++) {
+            contentWidth += children[i].scrollWidth;
+            contentWidth += containerWidth;
+        }
+        contentWidth = contentWidth === 0 ? 500 : contentWidth;
+        var duration = (this.props.speed || 5000) * contentWidth / 500000;
+        this.setState({
+            duration: duration,
+            content_width: contentWidth,
+            container_width: containerWidth
+        });
+    };
+    Horizontal.prototype.render = function () {
+        var _this = this;
+        var Container = styled.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n        position: relative;\n        left:", "px;\n        animation: changebox ", "s linear infinite;\n        animation-play-state: running;\n        animation-fill-mode: forwards;\n        &:hover {\n            animation-play-state: paused;\n            cursor: default;\n        }\n        @keyframes changebox {\n            0% {\n                transform: translateX(0);\n            }\n            100% {\n                transform: translateX(-", "px);\n            }\n        } \n        "], ["\n        position: relative;\n        left:", "px;\n        animation: changebox ", "s linear infinite;\n        animation-play-state: running;\n        animation-fill-mode: forwards;\n        &:hover {\n            animation-play-state: paused;\n            cursor: default;\n        }\n        @keyframes changebox {\n            0% {\n                transform: translateX(0);\n            }\n            100% {\n                transform: translateX(-", "px);\n            }\n        } \n        "])), this.state.container_width, this.state.duration, this.state.content_width);
+        var Item = styled.span(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n            display:inline-block;\n            margin-right: ", "px\n        "], ["\n            display:inline-block;\n            margin-right: ", "px\n        "])), this.state.container_width);
+        return (react.createElement("div", { className: this.props.className },
+            react.createElement(Container, { ref: function (div) { return _this.container = div; } }, this.props.text.map(function (e, i) {
+                return (react.createElement(Item, { key: i },
+                    " ",
+                    e));
+            }))));
+    };
+    return Horizontal;
+}(react.Component));
+var StyledHorizontal = styled(Horizontal)(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n    width:100%;\n    height: 100%;\n    overflow: hidden;\n    word-break: keep-all;\n    white-space: nowrap;\n"], ["\n    width:100%;\n    height: 100%;\n    overflow: hidden;\n    word-break: keep-all;\n    white-space: nowrap;\n"])));
+var templateObject_1;
+var templateObject_2;
+var templateObject_3;
+
+var Li = styled.li(templateObject_1$1 || (templateObject_1$1 = __makeTemplateObject(["\n  padding: 0 5px;\n  line-height:30px;\n  color: rgba(0, 0, 0, 0.85);\n  list-style-type:none;\n  cursor: default;\n  overflow:hidden;\n  white-space:nowrap;\n  text-overflow: ellipsis;\n  display:block;\n  \n"], ["\n  padding: 0 5px;\n  line-height:30px;\n  color: rgba(0, 0, 0, 0.85);\n  list-style-type:none;\n  cursor: default;\n  overflow:hidden;\n  white-space:nowrap;\n  text-overflow: ellipsis;\n  display:block;\n  \n"])));
+var Div = styled.div(templateObject_2$1 || (templateObject_2$1 = __makeTemplateObject(["\n  width: 100%;\n  overflow: hidden;\n  cursor: default;\n"], ["\n  width: 100%;\n  overflow: hidden;\n  cursor: default;\n"])));
+var Vertical = /** @class */ (function (_super) {
+    __extends(Vertical, _super);
+    function Vertical(props) {
+        var _this = _super.call(this, props) || this;
+        _this.timer = 0;
+        _this.innerTimer = 0;
+        _this.time = 1;
+        _this.run = true;
+        _this.position = 0;
+        _this.tick = function () {
+            if (_this.time % Math.round(_this.props.speed / 1000 * 60 * 2) === 0 && _this.run) {
+                cancelAnimationFrame(_this.innerTimer);
+                _this.innerTimer = requestAnimationFrame(_this.scroll);
+                _this.time = 0;
+            }
+            _this.time++;
+            if (!_this.run) {
+                _this.time = 0;
+            }
+            cancelAnimationFrame(_this.timer);
+            _this.timer = requestAnimationFrame(_this.tick);
+        };
+        _this.scroll = function () {
+            if (_this.position % 30 !== 0) {
+                _this.setState({ position: _this.position + 1 });
+                if (_this.position > (_this.state.num - 1) * 30) {
+                    _this.position = 0;
+                }
+                cancelAnimationFrame(_this.innerTimer);
+                _this.innerTimer = requestAnimationFrame(_this.scroll);
+            }
+            else {
+                cancelAnimationFrame(_this.innerTimer);
+            }
+            _this.position++;
+        };
+        _this.handleMouseEnter = function () {
+            _this.run = false;
+        };
+        _this.handleMouseLeave = function () {
+            _this.run = true;
+        };
+        var data = _this.props.text;
+        data.push(data[0]);
+        _this.state = {
+            position: 0,
+            num: _this.props.text.length,
+            data: data
+        };
+        return _this;
+    }
+    Vertical.prototype.componentDidMount = function () {
+        cancelAnimationFrame(this.innerTimer);
+        this.timer = requestAnimationFrame(this.tick);
+    };
+    Vertical.prototype.componentWillUnmount = function () {
+        cancelAnimationFrame(this.timer);
+    };
+    Vertical.prototype.render = function () {
+        var ItemBox = styled.ul(templateObject_3$1 || (templateObject_3$1 = __makeTemplateObject(["\n      width: 100%;\n      height: 30px;\n      position: relative;\n      top:-", "px;\n      padding:0px;\n      margin:0px;\n    "], ["\n      width: 100%;\n      height: 30px;\n      position: relative;\n      top:-", "px;\n      padding:0px;\n      margin:0px;\n    "])), this.state.position);
+        return (react.createElement("div", { className: this.props.className, onMouseEnter: this.handleMouseEnter, onMouseLeave: this.handleMouseLeave },
+            react.createElement(Div, null,
+                react.createElement(ItemBox, null, this.state.data.map(function (e, i) {
+                    return (react.createElement(Li, { key: i, title: e }, e));
+                })))));
+    };
+    return Vertical;
+}(react.Component));
+var StyledVertical = styled(Vertical)(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n  height: 40px;\n  border-bottom: 1px solid #eee;\n  display: flex;\n  align-content: flex-start;\n  align-items: center;\n"], ["\n  height: 40px;\n  border-bottom: 1px solid #eee;\n  display: flex;\n  align-content: flex-start;\n  align-items: center;\n"])));
+var templateObject_1$1;
+var templateObject_2$1;
+var templateObject_3$1;
+var templateObject_4;
+
+var TextScroll = /** @class */ (function (_super) {
+    __extends(TextScroll, _super);
+    function TextScroll() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    App.prototype.render = function () {
-        return (react.createElement("div", { className: this.props.className }, "TextScroll cadsasad"));
+    TextScroll.prototype.render = function () {
+        return (this.props.mode === 'horizontal' ?
+            react.createElement(StyledHorizontal, { text: this.props.text, speed: this.props.speed }) :
+            react.createElement(StyledVertical, { text: this.props.text, speed: this.props.speed }));
     };
-    return App;
+    return TextScroll;
 }(react.Component));
-var StyledApp = styled(App$1)(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  color: #abc;\n"], ["\n  color: #abc;\n"])));
-var templateObject_1;
+
+var Mode;
+(function (Mode) {
+    Mode["vertical"] = "vertical";
+    Mode["horizontal"] = "horizontal";
+})(Mode || (Mode = {}));
 
 var App = /** @class */ (function (_super) {
     __extends(App, _super);
     function App() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.data = [
+            '还是上面的例子，我们将transition属性合并，并扩展几个浏览器，如下CSS代码：',
+            '向上滚动动画',
+            '向上滚',
+        ];
+        return _this;
     }
     App.prototype.render = function () {
-        return (react.createElement("div", null,
-            react.createElement(StyledApp, null)));
+        return (react.createElement("div", { style: { width: '200px', border: '1px solid black' } },
+            react.createElement(TextScroll, { text: this.data, mode: Mode.vertical, speed: 3000 })));
     };
     return App;
 }(react.Component));

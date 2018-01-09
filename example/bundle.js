@@ -73,6 +73,7 @@ object-assign
 @license MIT
 */
 
+/* eslint-disable no-unused-vars */
 var getOwnPropertySymbols = Object.getOwnPropertySymbols;
 var hasOwnProperty = Object.prototype.hasOwnProperty;
 var propIsEnumerable = Object.prototype.propertyIsEnumerable;
@@ -180,6 +181,17 @@ var emptyObject_1 = emptyObject;
  *
  */
 
+/**
+ * Use invariant() to assert state which your program assumes to be true.
+ *
+ * Provide sprintf-style format (only %s is supported) and arguments
+ * to provide information about what broke and what you were
+ * expecting.
+ *
+ * The invariant message will be stripped in production, but the invariant
+ * will remain to ensure logic does not differ in production.
+ */
+
 var validateFormat = function validateFormat(format) {};
 
 {
@@ -213,6 +225,15 @@ function invariant(condition, format, a, b, c, d, e, f) {
 
 var invariant_1 = invariant;
 
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ * 
+ */
+
 function makeEmptyFunction(arg) {
   return function () {
     return arg;
@@ -238,6 +259,13 @@ emptyFunction.thatReturnsArgument = function (arg) {
 };
 
 var emptyFunction_1 = emptyFunction;
+
+/**
+ * Similar to invariant but only logs a warning if the condition is not met.
+ * This can be used to log issues in development environments in critical
+ * paths. Removing the logging code for production environments will keep the
+ * same logic and follow the same code paths.
+ */
 
 var warning = emptyFunction_1;
 
@@ -1741,6 +1769,21 @@ var ExecutionEnvironment = {
 
 var ExecutionEnvironment_1 = ExecutionEnvironment;
 
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ * @typechecks
+ */
+
+
+
+/**
+ * Upstream version of event listener. Does not take into account specific
+ * nature of platform.
+ */
 var EventListener = {
   /**
    * Listen to DOM events during the bubble phase.
@@ -1799,6 +1842,27 @@ var EventListener = {
 
 var EventListener_1 = EventListener;
 
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ * @typechecks
+ */
+
+/* eslint-disable fb-www/typeof-undefined */
+
+/**
+ * Same as document.activeElement but wraps in a try-catch block. In IE it is
+ * not safe to call document.activeElement if there is nothing focused.
+ *
+ * The activeElement will be null only if the document or document body is not
+ * yet defined.
+ *
+ * @param {?DOMDocument} doc Defaults to current document.
+ * @return {?DOMElement}
+ */
 function getActiveElement(doc) /*?DOMElement*/{
   doc = doc || (typeof document !== 'undefined' ? document : undefined);
   if (typeof doc === 'undefined') {
@@ -1877,6 +1941,19 @@ function shallowEqual(objA, objB) {
 
 var shallowEqual_1 = shallowEqual;
 
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ * @typechecks
+ */
+
+/**
+ * @param {*} object The object to check.
+ * @return {boolean} Whether or not the object is a DOM node.
+ */
 function isNode(object) {
   var doc = object ? object.ownerDocument || object : document;
   var defaultView = doc.defaultView || window;
@@ -1885,12 +1962,43 @@ function isNode(object) {
 
 var isNode_1 = isNode;
 
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ * @typechecks
+ */
+
+
+
+/**
+ * @param {*} object The object to check.
+ * @return {boolean} Whether or not the object is a DOM text node.
+ */
 function isTextNode(object) {
   return isNode_1(object) && object.nodeType == 3;
 }
 
 var isTextNode_1 = isTextNode;
 
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ * 
+ */
+
+
+
+/*eslint-disable no-bitwise */
+
+/**
+ * Checks if a given DOM node contains or is another DOM node.
+ */
 function containsNode(outerNode, innerNode) {
   if (!outerNode || !innerNode) {
     return false;
@@ -1919,6 +2027,10 @@ var containsNode_1 = containsNode;
  *
  */
 
+/**
+ * @param {DOMElement} node input/textarea to focus
+ */
+
 function focusNode(node) {
   // IE8 can throw "Can't move focus to the control because it is invisible,
   // not enabled, or of a type that does not accept the focus." for all kinds of
@@ -1929,6 +2041,15 @@ function focusNode(node) {
 }
 
 var focusNode_1 = focusNode;
+
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ * @typechecks
+ */
 
 var _uppercasePattern = /([A-Z])/g;
 
@@ -1973,6 +2094,15 @@ function hyphenateStyleName(string) {
 }
 
 var hyphenateStyleName_1 = hyphenateStyleName;
+
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ * @typechecks
+ */
 
 var _hyphenPattern = /-(.)/g;
 
@@ -19572,6 +19702,17 @@ var D__java_vsWS_reactTextscroll_node_modules_propTypes = createCommonjsModule(f
  * Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.
  */
 
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * @typechecks
+ */
+
 var _uppercasePattern$1 = /([A-Z])/g;
 
 /**
@@ -21088,6 +21229,8 @@ var _styled = (function (styledComponent, constructWithOptions) {
 });
 
 //      
+
+
 var _constructWithOptions = (function (css) {
   var constructWithOptions = function constructWithOptions(componentConstructor, tag) {
     var options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
@@ -21123,13 +21266,16 @@ var _constructWithOptions = (function (css) {
 });
 
 //      
-/* globals ReactClass */
 
+/* Import singletons */
+/* Import singleton constructors */
+/* Import components */
+/* Import Higher Order Components */
+/* Instantiate singletons */
 var ComponentStyle = _ComponentStyle(generateAlphabeticName, flatten, stringifyRules);
 var constructWithOptions = _constructWithOptions(css);
 var StyledComponent = _StyledComponent(ComponentStyle, constructWithOptions);
 
-/* Instantiate exported singletons */
 var styled = _styled(StyledComponent, constructWithOptions);
 
 var Horizontal = /** @class */ (function (_super) {
@@ -21178,7 +21324,6 @@ var StyledHorizontal = styled(Horizontal)(templateObject_3 || (templateObject_3 
 var templateObject_1;
 var templateObject_2;
 var templateObject_3;
-//# sourceMappingURL=Horizontal.js.map
 
 var Li = styled.li(templateObject_1$1 || (templateObject_1$1 = __makeTemplateObject(["\n  padding: 0 5px;\n  line-height:30px;\n  color: rgba(0, 0, 0, 0.85);\n  list-style-type:none;\n  cursor: default;\n  overflow:hidden;\n  white-space:nowrap;\n  text-overflow: ellipsis;\n  display:block;\n  \n"], ["\n  padding: 0 5px;\n  line-height:30px;\n  color: rgba(0, 0, 0, 0.85);\n  list-style-type:none;\n  cursor: default;\n  overflow:hidden;\n  white-space:nowrap;\n  text-overflow: ellipsis;\n  display:block;\n  \n"])));
 var Div = styled.div(templateObject_2$1 || (templateObject_2$1 = __makeTemplateObject(["\n  width: 100%;\n  overflow: hidden;\n  cursor: default;\n"], ["\n  width: 100%;\n  overflow: hidden;\n  cursor: default;\n"])));
@@ -21274,7 +21419,6 @@ var Mode;
     Mode["vertical"] = "vertical";
     Mode["horizontal"] = "horizontal";
 })(Mode || (Mode = {}));
-//# sourceMappingURL=interface.js.map
 
 var App = /** @class */ (function (_super) {
     __extends(App, _super);
@@ -21294,6 +21438,5 @@ var App = /** @class */ (function (_super) {
     return App;
 }(react.Component));
 reactDom.render(react.createElement(App, null), document.getElementById('root'));
-//# sourceMappingURL=index.js.map
 
 }());

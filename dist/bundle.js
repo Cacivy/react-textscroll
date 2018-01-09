@@ -54,7 +54,6 @@ var StyledHorizontal = styled(Horizontal)(templateObject_3 || (templateObject_3 
 var templateObject_1;
 var templateObject_2;
 var templateObject_3;
-//# sourceMappingURL=Horizontal.js.map
 
 var Li = styled.li(templateObject_1$1 || (templateObject_1$1 = tslib_1.__makeTemplateObject(["\n  padding: 0 5px;\n  line-height:30px;\n  color: rgba(0, 0, 0, 0.85);\n  list-style-type:none;\n  cursor: default;\n  overflow:hidden;\n  white-space:nowrap;\n  text-overflow: ellipsis;\n  display:block;\n  \n"], ["\n  padding: 0 5px;\n  line-height:30px;\n  color: rgba(0, 0, 0, 0.85);\n  list-style-type:none;\n  cursor: default;\n  overflow:hidden;\n  white-space:nowrap;\n  text-overflow: ellipsis;\n  display:block;\n  \n"])));
 var Div = styled.div(templateObject_2$1 || (templateObject_2$1 = tslib_1.__makeTemplateObject(["\n  width: 100%;\n  overflow: hidden;\n  cursor: default;\n"], ["\n  width: 100%;\n  overflow: hidden;\n  cursor: default;\n"])));

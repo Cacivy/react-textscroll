@@ -3,116 +3,133 @@ import styled from 'styled-components'
 import ReactDOM from 'react-dom'
 import { TextScrollProp } from '../interface'
 
+const Li = styled.li`
+  padding: 0 5px;
+  line-height:30px;
+  color: rgba(0, 0, 0, 0.85);
+  list-style-type:none;
+  cursor: default;
+  overflow:hidden;
+  white-space:nowrap;
+  text-overflow: ellipsis;
+  display:block;
+  
+`
+const Div = styled.div`
+  width: 100%;
+  overflow: hidden;
+  cursor: default;
+`
+
 interface TextScrollState {
-  speed: number
   position: number
-  maxPosition: number
+  num: number
+  data: Array<string>
 }
 
 class Vertical extends React.Component<TextScrollProp, TextScrollState> {
-  container: any
-  request: number = 0
-  time: number = 0
+
+  timer: number = 0
+  innerTimer: number = 0
+  time: number = 1
   run: boolean = true
+  position: number = 0
 
-  state = {
-
-    speed: 10,
-    position: 21,
-    maxPosition: 0,
-    // run: true
-
+  constructor(props: TextScrollProp) {
+    super(props)
+    let data = this.props.text
+    data.push(data[0])
+    this.state = {
+      position: 0,
+      num: this.props.text.length,
+      data: data
+    }
   }
 
   componentDidMount() {
-    let dom = ReactDOM.findDOMNode(this.container)
-    let children = dom.children
-    // let minHeight = this.state.minHeight
-    // for (let i = 0; i < children.length; i++) {
-    //   const height = children[i].scrollHeight
-    //   if (height > minHeight) {
-    //     minHeight = height
-    //   }
-    // }
-    this.setState({ maxPosition: dom.scrollHeight })
-    this.request = requestAnimationFrame(this.tick)
+    cancelAnimationFrame(this.innerTimer)
+    this.timer = requestAnimationFrame(this.tick)
 
   }
 
   tick = () => {
-    if (this.run) {
-      if (this.time++ === 60) {
-
-        if (this.run && parseInt((this.state.maxPosition + this.state.position).toFixed(2), null) <= 21) {
-          this.setState({ position: 0 })
-        }
-        this.run = false
-        setTimeout(() => {
-          this.run = true
-          this.time = 0
-        }, 500)
-      } else {
-        this.setState({ position: (this.state.position - 21 / 60) })
-      }
+    if (this.time % Math.round(this.props.speed / 1000 * 60 * 2) === 0 && this.run) {
+      cancelAnimationFrame(this.innerTimer)
+      this.innerTimer = requestAnimationFrame(this.scroll)
+      this.time = 0
     }
-    requestAnimationFrame(this.tick)
+    this.time++
+    if (!this.run) {
+      this.time = 0
+    }
+    cancelAnimationFrame(this.timer)
+    this.timer = requestAnimationFrame(this.tick)
+  }
+
+  scroll = () => {
+
+    if (this.position % 30 !== 0) {
+      this.setState({ position: this.position + 1 })
+      if (this.position > (this.state.num - 1) * 30) {
+        this.position = 0
+      }
+      cancelAnimationFrame(this.innerTimer)
+      this.innerTimer = requestAnimationFrame(this.scroll)
+    } else {
+      cancelAnimationFrame(this.innerTimer)
+    }
+    this.position++
   }
 
   componentWillUnmount() {
-    cancelAnimationFrame(this.request)
+    cancelAnimationFrame(this.timer)
 
   }
 
   handleMouseEnter = () => {
-    console.log(111, this.run)
     this.run = false
-    // this.setState({ run: false })
-    console.log(111, this.run)
   }
   handleMouseLeave = () => {
-    console.log(22, this.run)
     this.run = true
-    // this.setState({ run: true })
-    console.log(22, this.run)
   }
 
   render() {
-    const ItemBox = styled.div`
-      display: flex;
-      flex-direction: column;
+
+    const ItemBox = styled.ul`
+      width: 100%;
+      height: 30px;
       position: relative;
-      transition: all 10s;
-      top:${this.state.position}px;
-      white-space:nowrap;
+      top:-${this.state.position}px;
+      padding:0px;
+      margin:0px;
     `
     return (
-      <div className={this.props.className}
+      <div
+        className={this.props.className}
+        onMouseEnter={this.handleMouseEnter}
+        onMouseLeave={this.handleMouseLeave}
       >
-        <ItemBox ref={(div: any) => this.container = div}
-          onMouseEnter={this.handleMouseEnter}
-          onMouseLeave={this.handleMouseLeave}
-        >
-          {this.props.text.map((e: any, i: number) => {
-            return (
-              <div
-                key={i}
-                style={{ textOverflow: 'ellipsis', overflow: 'hidden', cursor: 'default' }}
-                title={e}
-              >
-                {e}
-              </div>
-            )
-          })}
-        </ItemBox>
+        <Div>
+          <ItemBox>
+            {this.state.data.map((e: any, i: number) => {
+              return (
+                <Li key={i} title={e} >
+                  {e}
+                </Li>
+              )
+            })}
+          </ItemBox>
+        </Div>
       </div>
     )
   }
 }
 
 const StyledVertical = styled(Vertical) `
-    width:100%;
-    height:21px;
-    box-sizing:border-box;
-    overflow:hidden; 
+  height: 40px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-content: flex-start;
+  align-items: center;
 `
 export default StyledVertical

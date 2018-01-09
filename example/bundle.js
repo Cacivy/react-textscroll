@@ -21180,79 +21180,81 @@ var templateObject_2;
 var templateObject_3;
 //# sourceMappingURL=Horizontal.js.map
 
+var Li = styled.li(templateObject_1$1 || (templateObject_1$1 = __makeTemplateObject(["\n  padding: 0 5px;\n  line-height:30px;\n  color: rgba(0, 0, 0, 0.85);\n  list-style-type:none;\n  cursor: default;\n  overflow:hidden;\n  white-space:nowrap;\n  text-overflow: ellipsis;\n  display:block;\n  \n"], ["\n  padding: 0 5px;\n  line-height:30px;\n  color: rgba(0, 0, 0, 0.85);\n  list-style-type:none;\n  cursor: default;\n  overflow:hidden;\n  white-space:nowrap;\n  text-overflow: ellipsis;\n  display:block;\n  \n"])));
+var Div = styled.div(templateObject_2$1 || (templateObject_2$1 = __makeTemplateObject(["\n  width: 100%;\n  overflow: hidden;\n  cursor: default;\n"], ["\n  width: 100%;\n  overflow: hidden;\n  cursor: default;\n"])));
 var Vertical = /** @class */ (function (_super) {
     __extends(Vertical, _super);
-    function Vertical() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.request = 0;
-        _this.time = 0;
+    function Vertical(props) {
+        var _this = _super.call(this, props) || this;
+        _this.timer = 0;
+        _this.innerTimer = 0;
+        _this.time = 1;
         _this.run = true;
-        _this.state = {
-            speed: 10,
-            position: 21,
-            maxPosition: 0,
-        };
+        _this.position = 0;
         _this.tick = function () {
-            if (_this.run) {
-                if (_this.time++ === 60) {
-                    if (_this.run && parseInt((_this.state.maxPosition + _this.state.position).toFixed(2), null) <= 21) {
-                        _this.setState({ position: 0 });
-                    }
-                    _this.run = false;
-                    setTimeout(function () {
-                        _this.run = true;
-                        _this.time = 0;
-                    }, 500);
-                }
-                else {
-                    _this.setState({ position: (_this.state.position - 21 / 60) });
-                }
+            if (_this.time % Math.round(_this.props.speed / 1000 * 60 * 2) === 0 && _this.run) {
+                cancelAnimationFrame(_this.innerTimer);
+                _this.innerTimer = requestAnimationFrame(_this.scroll);
+                _this.time = 0;
             }
-            requestAnimationFrame(_this.tick);
+            _this.time++;
+            if (!_this.run) {
+                _this.time = 0;
+            }
+            cancelAnimationFrame(_this.timer);
+            _this.timer = requestAnimationFrame(_this.tick);
+        };
+        _this.scroll = function () {
+            if (_this.position % 30 !== 0) {
+                _this.setState({ position: _this.position + 1 });
+                if (_this.position > (_this.state.num - 1) * 30) {
+                    _this.position = 0;
+                }
+                cancelAnimationFrame(_this.innerTimer);
+                _this.innerTimer = requestAnimationFrame(_this.scroll);
+            }
+            else {
+                cancelAnimationFrame(_this.innerTimer);
+            }
+            _this.position++;
         };
         _this.handleMouseEnter = function () {
-            console.log(111, _this.run);
             _this.run = false;
-            // this.setState({ run: false })
-            console.log(111, _this.run);
         };
         _this.handleMouseLeave = function () {
-            console.log(22, _this.run);
             _this.run = true;
-            // this.setState({ run: true })
-            console.log(22, _this.run);
+        };
+        var data = _this.props.text;
+        data.push(data[0]);
+        _this.state = {
+            position: 0,
+            num: _this.props.text.length,
+            data: data
         };
         return _this;
     }
     Vertical.prototype.componentDidMount = function () {
-        var dom = reactDom.findDOMNode(this.container);
-        var children = dom.children;
-        // let minHeight = this.state.minHeight
-        // for (let i = 0; i < children.length; i++) {
-        //   const height = children[i].scrollHeight
-        //   if (height > minHeight) {
-        //     minHeight = height
-        //   }
-        // }
-        this.setState({ maxPosition: dom.scrollHeight });
-        this.request = requestAnimationFrame(this.tick);
+        cancelAnimationFrame(this.innerTimer);
+        this.timer = requestAnimationFrame(this.tick);
     };
     Vertical.prototype.componentWillUnmount = function () {
-        cancelAnimationFrame(this.request);
+        cancelAnimationFrame(this.timer);
     };
     Vertical.prototype.render = function () {
-        var _this = this;
-        var ItemBox = styled.div(templateObject_1$1 || (templateObject_1$1 = __makeTemplateObject(["\n      display: flex;\n      flex-direction: column;\n      position: relative;\n      transition: all 10s;\n      top:", "px;\n      white-space:nowrap;\n    "], ["\n      display: flex;\n      flex-direction: column;\n      position: relative;\n      transition: all 10s;\n      top:", "px;\n      white-space:nowrap;\n    "])), this.state.position);
-        return (react.createElement("div", { className: this.props.className },
-            react.createElement(ItemBox, { ref: function (div) { return _this.container = div; }, onMouseEnter: this.handleMouseEnter, onMouseLeave: this.handleMouseLeave }, this.props.text.map(function (e, i) {
-                return (react.createElement("div", { key: i, style: { textOverflow: 'ellipsis', overflow: 'hidden', cursor: 'default' }, title: e }, e));
-            }))));
+        var ItemBox = styled.ul(templateObject_3$1 || (templateObject_3$1 = __makeTemplateObject(["\n      width: 100%;\n      height: 30px;\n      position: relative;\n      top:-", "px;\n      padding:0px;\n      margin:0px;\n    "], ["\n      width: 100%;\n      height: 30px;\n      position: relative;\n      top:-", "px;\n      padding:0px;\n      margin:0px;\n    "])), this.state.position);
+        return (react.createElement("div", { className: this.props.className, onMouseEnter: this.handleMouseEnter, onMouseLeave: this.handleMouseLeave },
+            react.createElement(Div, null,
+                react.createElement(ItemBox, null, this.state.data.map(function (e, i) {
+                    return (react.createElement(Li, { key: i, title: e }, e));
+                })))));
     };
     return Vertical;
 }(react.Component));
-var StyledVertical = styled(Vertical)(templateObject_2$1 || (templateObject_2$1 = __makeTemplateObject(["\n    width:100%;\n    height:21px;\n    box-sizing:border-box;\n    overflow:hidden; \n"], ["\n    width:100%;\n    height:21px;\n    box-sizing:border-box;\n    overflow:hidden; \n"])));
+var StyledVertical = styled(Vertical)(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n  height: 40px;\n  border-bottom: 1px solid #eee;\n  display: flex;\n  align-content: flex-start;\n  align-items: center;\n"], ["\n  height: 40px;\n  border-bottom: 1px solid #eee;\n  display: flex;\n  align-content: flex-start;\n  align-items: center;\n"])));
 var templateObject_1$1;
 var templateObject_2$1;
+var templateObject_3$1;
+var templateObject_4;
 
 var TextScroll = /** @class */ (function (_super) {
     __extends(TextScroll, _super);
@@ -21279,16 +21281,15 @@ var App = /** @class */ (function (_super) {
     function App() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.data = [
-            '向上滚动动画',
-            '向上滚',
             '还是上面的例子，我们将transition属性合并，并扩展几个浏览器，如下CSS代码：',
             '向上滚动动画',
+            '向上滚',
         ];
         return _this;
     }
     App.prototype.render = function () {
         return (react.createElement("div", { style: { width: '200px', border: '1px solid black' } },
-            react.createElement(TextScroll, { text: this.data, mode: Mode.vertical, speed: 5000 })));
+            react.createElement(TextScroll, { text: this.data, mode: Mode.vertical, speed: 3000 })));
     };
     return App;
 }(react.Component));

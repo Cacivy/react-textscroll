@@ -7,9 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "rollup -cw",
     "start": "npm run dev",
-    "build": "cross-env NODE_ENV=production npm run lint && rollup -c --watch",
+    "build": "cross-env NODE_ENV=prod npm run lint && rollup -c",
     "lint": "tslint --project tsconfig.json",
-    "deploy": "gh-pages-with-token -d build"
+    "deploy": "gh-pages-with-token -d example"
   },
   "keywords": [
     "react",

@@ -1,12 +1,12 @@
 language: node_js
 node_js:
   - "node"
-  - "7"
+  - "8"
 cache:
   directories:
     - node_modules
 install:
-  - yarn
+  - travis_wait yarn
 script:
   - yarn run build
 after_script:

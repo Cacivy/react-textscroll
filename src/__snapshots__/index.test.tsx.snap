@@ -1,0 +1,287 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render  Horizontal should be render 1`] = `
+.c0 {
+  width: 100%;
+  height: 40px;
+  overflow: hidden;
+  border-bottom: 1px solid #eee;
+  word-break: keep-all;
+  white-space: nowrap;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c1 {
+  position: relative;
+  height: 30px;
+  left: 0px;
+  -webkit-animation: changebox 5s linear infinite;
+  animation: changebox 5s linear infinite;
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+.c1:hover {
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+  cursor: default;
+}
+
+.c2 {
+  display: inline-block;
+  line-height: 30px;
+  margin-right: 0px;
+}
+
+<TextScroll
+  mode="horizontal"
+  speed={5000}
+  text={
+    Array [
+      "还是上面的例子，我们将transition属性合并，并扩展几个浏览器，如下CSS代码：",
+      "向上滚动动画",
+      "向上滚",
+      "还是上面的例子，我们将transition属性合并，并扩展几个浏览器，如下CSS代码：",
+    ]
+  }
+>
+  <Styled(Horizontal)
+    speed={5000}
+    text={
+      Array [
+        "还是上面的例子，我们将transition属性合并，并扩展几个浏览器，如下CSS代码：",
+        "向上滚动动画",
+        "向上滚",
+        "还是上面的例子，我们将transition属性合并，并扩展几个浏览器，如下CSS代码：",
+      ]
+    }
+  >
+    <Horizontal
+      className="c0"
+      speed={5000}
+      text={
+        Array [
+          "还是上面的例子，我们将transition属性合并，并扩展几个浏览器，如下CSS代码：",
+          "向上滚动动画",
+          "向上滚",
+          "还是上面的例子，我们将transition属性合并，并扩展几个浏览器，如下CSS代码：",
+        ]
+      }
+    >
+      <div
+        className="c0"
+      >
+        <styled.div>
+          <div
+            className="c1"
+          >
+            <styled.span
+              key="0"
+              title="还是上面的例子，我们将transition属性合并，并扩展几个浏览器，如下CSS代码："
+            >
+              <span
+                className="c2"
+                title="还是上面的例子，我们将transition属性合并，并扩展几个浏览器，如下CSS代码："
+              >
+                 
+                还是上面的例子，我们将transition属性合并，并扩展几个浏览器，如下CSS代码：
+              </span>
+            </styled.span>
+            <styled.span
+              key="1"
+              title="向上滚动动画"
+            >
+              <span
+                className="c2"
+                title="向上滚动动画"
+              >
+                 
+                向上滚动动画
+              </span>
+            </styled.span>
+            <styled.span
+              key="2"
+              title="向上滚"
+            >
+              <span
+                className="c2"
+                title="向上滚"
+              >
+                 
+                向上滚
+              </span>
+            </styled.span>
+            <styled.span
+              key="3"
+              title="还是上面的例子，我们将transition属性合并，并扩展几个浏览器，如下CSS代码："
+            >
+              <span
+                className="c2"
+                title="还是上面的例子，我们将transition属性合并，并扩展几个浏览器，如下CSS代码："
+              >
+                 
+                还是上面的例子，我们将transition属性合并，并扩展几个浏览器，如下CSS代码：
+              </span>
+            </styled.span>
+          </div>
+        </styled.div>
+      </div>
+    </Horizontal>
+  </Styled(Horizontal)>
+</TextScroll>
+`;
+
+exports[`render Vertical should be render 1`] = `
+.c0 {
+  height: 40px;
+  border-bottom: 1px solid #eee;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: flex-start;
+  -ms-flex-line-pack: flex-start;
+  align-content: flex-start;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c2 {
+  width: 100%;
+  height: 30px;
+  position: relative;
+  top: -0px;
+  padding: 0px;
+  margin: 0px;
+}
+
+.c1 {
+  width: 100%;
+  overflow: hidden;
+  cursor: default;
+}
+
+.c3 {
+  padding: 0 5px;
+  line-height: 30px;
+  color: rgba(0,0,0,0.85);
+  list-style-type: none;
+  cursor: default;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+<TextScroll
+  mode="vertical"
+  speed={5000}
+  text={
+    Array [
+      "还是上面的例子，我们将transition属性合并，并扩展几个浏览器，如下CSS代码：",
+      "向上滚动动画",
+      "向上滚",
+      "还是上面的例子，我们将transition属性合并，并扩展几个浏览器，如下CSS代码：",
+    ]
+  }
+>
+  <Styled(Vertical)
+    speed={5000}
+    text={
+      Array [
+        "还是上面的例子，我们将transition属性合并，并扩展几个浏览器，如下CSS代码：",
+        "向上滚动动画",
+        "向上滚",
+        "还是上面的例子，我们将transition属性合并，并扩展几个浏览器，如下CSS代码：",
+      ]
+    }
+  >
+    <Vertical
+      className="c0"
+      speed={5000}
+      text={
+        Array [
+          "还是上面的例子，我们将transition属性合并，并扩展几个浏览器，如下CSS代码：",
+          "向上滚动动画",
+          "向上滚",
+          "还是上面的例子，我们将transition属性合并，并扩展几个浏览器，如下CSS代码：",
+        ]
+      }
+    >
+      <div
+        className="c0"
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+      >
+        <styled.div>
+          <div
+            className="c1"
+          >
+            <styled.ul>
+              <ul
+                className="c2"
+              >
+                <styled.li
+                  key="0"
+                  title="还是上面的例子，我们将transition属性合并，并扩展几个浏览器，如下CSS代码："
+                >
+                  <li
+                    className="c3"
+                    title="还是上面的例子，我们将transition属性合并，并扩展几个浏览器，如下CSS代码："
+                  >
+                    还是上面的例子，我们将transition属性合并，并扩展几个浏览器，如下CSS代码：
+                  </li>
+                </styled.li>
+                <styled.li
+                  key="1"
+                  title="向上滚动动画"
+                >
+                  <li
+                    className="c3"
+                    title="向上滚动动画"
+                  >
+                    向上滚动动画
+                  </li>
+                </styled.li>
+                <styled.li
+                  key="2"
+                  title="向上滚"
+                >
+                  <li
+                    className="c3"
+                    title="向上滚"
+                  >
+                    向上滚
+                  </li>
+                </styled.li>
+                <styled.li
+                  key="3"
+                  title="还是上面的例子，我们将transition属性合并，并扩展几个浏览器，如下CSS代码："
+                >
+                  <li
+                    className="c3"
+                    title="还是上面的例子，我们将transition属性合并，并扩展几个浏览器，如下CSS代码："
+                  >
+                    还是上面的例子，我们将transition属性合并，并扩展几个浏览器，如下CSS代码：
+                  </li>
+                </styled.li>
+              </ul>
+            </styled.ul>
+          </div>
+        </styled.div>
+      </div>
+    </Vertical>
+  </Styled(Vertical)>
+</TextScroll>
+`;

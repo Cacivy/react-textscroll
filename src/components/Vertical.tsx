@@ -35,14 +35,15 @@ class Vertical extends React.Component<TextScrollProp, TextScrollState> {
   run: boolean = true
   position: number = 0
 
+  state = {
+    position: 0,
+    num: this.props.text.length,
+    data: []
+  }
   componentWillMount() {
     let data = this.props.text
     data.push(data[0])
-    this.state = {
-      position: 0,
-      num: this.props.text.length,
-      data: data
-    }
+    this.setState({ data: data })
   }
 
   componentDidMount() {

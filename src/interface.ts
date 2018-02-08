@@ -5,7 +5,7 @@ export enum Mode {
 
 export interface TextScrollProp {
   className?: string
-  mode: Mode
+  mode: string
   text: Array<string>
   speed?: number
 }

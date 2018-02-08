@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+  - "8"
+cache:
+  directories:
+    - node_modules
+install:
+  - yarn
+script:
+  - yarn run build
+after_script:
+  - yarn run deploy 

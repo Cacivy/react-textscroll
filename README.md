@@ -1,17 +1,23 @@
 # TextScroll 
+[![Build Status](https://travis-ci.org/zyyabc15/mine-sweeping.svg?branch=master)](https://travis-ci.org/zyyabc15/react-textscroll)
 
 基于React的文字滚动组件，具有多种展示模式以及参数定制，适用于消息广播、大屏展示等场景
+
 
 ## Dev
 
 ```
-yarn 
+yarn install
+
+yarn test 
 
 yarn start
+
 ```
 
-
-## Usage
+## ONLINE DISPLAY
+[TextScroll](https://zyyabc15.github.io/react-textscroll/)
+## HOW TO USE IT
 
 ## 垂直滚动
 
@@ -25,7 +31,7 @@ class Content extends React.Component {
     	return (
         	<div>
             	<TextScroll 
-                    mode="vertical"
+                    mode='vertical'
                     text={text} 
                     speed={1000} 
                 />
@@ -43,11 +49,11 @@ import TextScroll from 'react-textscroll'
 
 class Content extends React.Component {
 	render() {
-    	const text = '这是一条很长很长的消息，可以由多条组成。今天天气晴，微风，空气质量好，紫外线强'
+    	const text = ['这是一条很长很长的消息，可以由多条组成。今天天气晴，微风，空气质量好，紫外线强']
     	return (
         	<div>
             	<TextScroll 
-                    mode="horizontal"
+                    mode='horizontal'
                     text={text} 
                     speed={1000} 
                 />
@@ -62,9 +68,9 @@ class Content extends React.Component {
 | 参数 | 说明 | 类型 | 默认值 |
 | - | - | - | - |
 | mode | 文字滚动类型，目前支持水平、垂直 | string: `horizontal` `vertical` | `vertical` |
-| text | 要展示的长文字/文字数组 | string/string[] | - |
-| speed | 滚动速度 | number | 2000(ms) |
-| onChange | 滚动发生时触发 | function({ item, key, node }) | - |
+| text | 要展示的长文字/文字数组 | string[] | - |
+| speed | 滚动速度 | number | 5000(ms) |
+<!-- | onChange | 滚动发生时触发 | function({ item, key, node }) | - | -->
 
 ## More
 

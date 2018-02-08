@@ -35,15 +35,15 @@ class Vertical extends React.Component<TextScrollProp, TextScrollState> {
   run: boolean = true
   position: number = 0
 
-  constructor(props: TextScrollProp) {
-    super(props)
+  state = {
+    position: 0,
+    num: this.props.text.length,
+    data: []
+  }
+  componentWillMount() {
     let data = this.props.text
     data.push(data[0])
-    this.state = {
-      position: 0,
-      num: this.props.text.length,
-      data: data
-    }
+    this.setState({ data: data })
   }
 
   componentDidMount() {
@@ -53,7 +53,7 @@ class Vertical extends React.Component<TextScrollProp, TextScrollState> {
   }
 
   tick = () => {
-    if (this.time % Math.round(this.props.speed / 1000 * 60 * 2) === 0 && this.run) {
+    if (this.time % Math.round((this.props.speed || 5000) / 1000 * 60) === 0 && this.run) {
       cancelAnimationFrame(this.innerTimer)
       this.innerTimer = requestAnimationFrame(this.scroll)
       this.time = 0
